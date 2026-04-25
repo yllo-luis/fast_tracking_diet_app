@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "766222845640",
+    "project_id": "fast-tracking-diet-app",
+    "storage_bucket": "fast-tracking-diet-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766222845640:android:de6f687687b8834f14c7fd",
+        "android_client_info": {
+          "package_name": "com.example.fast_tracking_diet_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAydrKF4QngMBFw3VPTRK8t-1h-xvV9G28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

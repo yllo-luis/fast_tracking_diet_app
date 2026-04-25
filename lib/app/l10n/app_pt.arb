@@ -1,3 +1,18 @@
 {
+  "loginTitle": "Fazer login",
+  "loginSubTitle": "Realize login para aproveitar todas as funções do Fast Tracking!",
+  "loginEmailFieldHintText": "Digite seu email aqui.",
+  "loginPasswordFieldHintText": "Digite sua senha aqui.",
+  "loginInvalidEmailText": "Por favor digite um email valido",
+  "loginInvalidPasswordText": "Por favor digite uma senha valida",
+  "loginRegisterTitle": "Não possui conta? Registre aqui!",
 
+  "registerTitle": "Comece sua jornada de saúde hoje",
+  "registerSubtitle": "Cadastre-se para alcançar seus objetivos de saúde com o suporte que você precisa.",
+  "registerButtonTitle": "Registrar",
+  "registerButtonGeneratePasswordTitle": "Gerar senha",
+
+  "registerPasswordStrengthWeak": "Senha fraca",
+  "registerPasswordStrengthMedium": "Senha mediana",
+  "registerPasswordStrengthStrong": "Senha forte"
 }

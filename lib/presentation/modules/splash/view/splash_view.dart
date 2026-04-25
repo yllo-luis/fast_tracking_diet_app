@@ -1,8 +1,23 @@
+import 'package:fast_tracking_diet_app/presentation/modules/splash/controller/splash_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lottie/lottie.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  final controller = Modular.get<SplashController>();
+
+  @override
+  void initState() {
+    controller.checkIfUserIsLoggedIn();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

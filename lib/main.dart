@@ -1,5 +1,5 @@
 import 'package:fast_tracking_diet_app/app/app_main_module.dart';
-import 'package:fast_tracking_diet_app/presentation/modules/splash/view/splash_view.dart';
+import 'package:fast_tracking_diet_app/app/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -30,10 +30,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const SplashView(),
+      theme: AppTheme.appThemeDarkMode,
+      routerConfig: Modular.routerConfig,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
     );

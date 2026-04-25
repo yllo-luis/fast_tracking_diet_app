@@ -1,3 +1,4 @@
+import 'package:fast_tracking_diet_app/app/auth/firebase_auth_service.dart';
 import 'package:fast_tracking_diet_app/data/datasource/http_datasource.dart';
 import 'package:fast_tracking_diet_app/data/datasource/local_datasource.dart';
 import 'package:fast_tracking_diet_app/presentation/modules/splash/splash_module.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../data/datasource/sharedpreferences_datasource.dart';
+import '../presentation/modules/login/login_module.dart';
 
 class AppMainModule extends Module {
   @override
@@ -12,13 +14,14 @@ class AppMainModule extends Module {
     i.addSingleton(() => HttpDatasource());
     i.addSingleton(() => LocalDatasource());
     i.addSingleton(() => SharedPreferencesDatasource());
+    i.addSingleton(() => FirebaseAuthService());
   }
 
   @override
   void routes(RouteManager r) {
-    r.module('/splash', module: SplashModule());
+    r.module(Modular.initialRoute, module: SplashModule());
+    r.module('/login', module: LoginModule());
     r.child('/home', child: (context) => const Placeholder());
-    r.child('/activity', child: (context) => const Placeholder());
     r.child('/fast_history', child: (context) => const Placeholder());
   }
 }

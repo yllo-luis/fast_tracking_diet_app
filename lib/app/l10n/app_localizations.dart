@@ -97,6 +97,90 @@ abstract class AppLocalizations {
     Locale('en'),
     Locale('pt'),
   ];
+
+  /// No description provided for @loginTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get loginTitle;
+
+  /// No description provided for @loginSubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in to take advantage of all the features of Fast Tracking!'**
+  String get loginSubTitle;
+
+  /// No description provided for @loginEmailFieldHintText.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email address here'**
+  String get loginEmailFieldHintText;
+
+  /// No description provided for @loginPasswordFieldHintText.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password here'**
+  String get loginPasswordFieldHintText;
+
+  /// No description provided for @loginInvalidEmailText.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email address'**
+  String get loginInvalidEmailText;
+
+  /// No description provided for @loginInvalidPasswordText.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid password'**
+  String get loginInvalidPasswordText;
+
+  /// No description provided for @loginRegisterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account? Sign up here!'**
+  String get loginRegisterTitle;
+
+  /// No description provided for @registerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start your health journey today'**
+  String get registerTitle;
+
+  /// No description provided for @registerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up to achieve your health goals with the support you need.'**
+  String get registerSubtitle;
+
+  /// No description provided for @registerButtonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get registerButtonTitle;
+
+  /// No description provided for @registerButtonGeneratePasswordTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Generate Password'**
+  String get registerButtonGeneratePasswordTitle;
+
+  /// No description provided for @registerPasswordStrengthWeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Weak'**
+  String get registerPasswordStrengthWeak;
+
+  /// No description provided for @registerPasswordStrengthMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get registerPasswordStrengthMedium;
+
+  /// No description provided for @registerPasswordStrengthStrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Strong'**
+  String get registerPasswordStrengthStrong;
 }
 
 class _AppLocalizationsDelegate

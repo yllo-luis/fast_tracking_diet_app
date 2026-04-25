@@ -1,3 +1,18 @@
 {
+  "loginTitle": "Sign in",
+  "loginSubTitle": "Log in to take advantage of all the features of Fast Tracking!",
+  "loginEmailFieldHintText": "Enter your email address here",
+  "loginPasswordFieldHintText": "Enter your password here",
+  "loginInvalidEmailText": "Please enter a valid email address",
+  "loginInvalidPasswordText": "Please enter a valid password",
+  "loginRegisterTitle": "Don't have an account? Sign up here!",
 
+  "registerTitle": "Start your health journey today",
+  "registerSubtitle": "Sign up to achieve your health goals with the support you need.",
+  "registerButtonTitle": "Sign up",
+  "registerButtonGeneratePasswordTitle": "Generate Password",
+
+  "registerPasswordStrengthWeak": "Weak",
+  "registerPasswordStrengthMedium": "Medium",
+  "registerPasswordStrengthStrong": "Strong"
 }

@@ -21,7 +21,7 @@ aplicativo.
 
 O seguinte comando deve ser executado:
 
-flutter pub run build_runner build --delete-conflicting-outputs
+```flutter pub run build_runner build --delete-conflicting-outputs```
 
 Por fim, basta apenas executar o comando:
 

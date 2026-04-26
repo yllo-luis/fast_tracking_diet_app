@@ -77,11 +77,13 @@ class _RegisterViewState extends State<RegisterView> {
                         valueListenable: shouldHidePassword,
                         builder: (context, value, child) {
                           return PasswordCheckerWidget(
-                            passwordController: controller.getLoginStoreInst.passwordRegister,
+                            passwordController:
+                                controller.getLoginStoreInst.passwordRegister,
                             shouldHidePassword: value,
-                            onShowPassword: () => shouldHidePassword.value = !value,
+                            onShowPassword: () =>
+                                shouldHidePassword.value = !value,
                           );
-                        }
+                        },
                       ),
                     ],
                   ),
@@ -89,20 +91,29 @@ class _RegisterViewState extends State<RegisterView> {
                 ValueListenableBuilder<bool>(
                   valueListenable: controller.getLoginStoreInst.isDoingRegister,
                   builder: (context, value, child) {
-                    return AnimatedContainer(
-                      duration: PresentationConstants.animationDuration,
-                      child: Center(
-                        child: FilledButton(
-                          onPressed: () {
-                            if (formState.currentState?.validate() == true) {
-                              controller.doRegister();
-                            }
-                          },
-                          child: Text(
-                            AppLocalizations.of(context)!.registerButtonTitle,
-                            style: GoogleFonts.inter(),
-                          ),
-                        ),
+                    return Center(
+                      child: AnimatedSwitcher(
+                        duration: PresentationConstants.animationDuration,
+                        child: value == false
+                            ? FilledButton(
+                                onPressed: () {
+                                  if (formState.currentState?.validate() ==
+                                      true) {
+                                    controller.doRegister().catchError((_, _) {
+                                      if (context.mounted) {
+                                        showErrorSnackbar(context);
+                                      }
+                                    });
+                                  }
+                                },
+                                child: Text(
+                                  AppLocalizations.of(
+                                    context,
+                                  )!.registerButtonTitle,
+                                  style: GoogleFonts.inter(),
+                                ),
+                              )
+                            : const CircularProgressIndicator(),
                       ),
                     );
                   },
@@ -110,6 +121,30 @@ class _RegisterViewState extends State<RegisterView> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  void showErrorSnackbar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Column(
+          crossAxisAlignment: .start,
+          children: [
+            Text(
+              AppLocalizations.of(context)!.errorTitle,
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: Colors.white),
+            ),
+            Text(
+              AppLocalizations.of(context)!.errorSubTitle,
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: Colors.white),
+            ),
+          ],
         ),
       ),
     );

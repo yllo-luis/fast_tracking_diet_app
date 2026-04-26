@@ -1,6 +1,7 @@
 import 'package:fast_tracking_diet_app/app/auth/firebase_auth_service.dart';
 import 'package:fast_tracking_diet_app/data/datasource/http_datasource.dart';
 import 'package:fast_tracking_diet_app/data/datasource/local_datasource.dart';
+import 'package:fast_tracking_diet_app/presentation/modules/home/home_module.dart';
 import 'package:fast_tracking_diet_app/presentation/modules/splash/splash_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -21,7 +22,7 @@ class AppMainModule extends Module {
   void routes(RouteManager r) {
     r.module(Modular.initialRoute, module: SplashModule());
     r.module('/login', module: LoginModule());
-    r.child('/home', child: (context) => const Placeholder());
+    r.module('/home', module: HomeModule());
     r.child('/fast_history', child: (context) => const Placeholder());
   }
 }

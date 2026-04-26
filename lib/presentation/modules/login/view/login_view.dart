@@ -53,7 +53,8 @@ class _LoginViewState extends State<LoginView> {
                           )!.loginEmailFieldHintText,
                         ),
                         validator: (value) {
-                          if (value == null || EmailValidator.validate(value) == false) {
+                          if (value == null ||
+                              EmailValidator.validate(value) == false) {
                             return AppLocalizations.of(
                               context,
                             )!.loginInvalidEmailText;
@@ -87,17 +88,27 @@ class _LoginViewState extends State<LoginView> {
                 ValueListenableBuilder<bool>(
                   valueListenable: controller.getLoginStoreInst.isDoingLogin,
                   builder: (context, value, child) {
-                    return AnimatedContainer(
-                      duration: PresentationConstants.animationDuration,
-                      child: Center(
-                        child: FilledButton(
-                          onPressed: () {
-                            if (formState.currentState?.validate() == true) {
-                              controller.doLogin();
-                            }
-                          },
-                          child: Text('Login', style: GoogleFonts.inter()),
-                        ),
+                    return Center(
+                      child: AnimatedSwitcher(
+                        duration: PresentationConstants.animationDuration,
+                        child: value == false
+                            ? FilledButton(
+                                onPressed: () {
+                                  if (formState.currentState?.validate() ==
+                                      true) {
+                                    controller.doLogin().catchError((_, _) {
+                                      if (context.mounted) {
+                                        showErrorSnackbar(context);
+                                      }
+                                    });
+                                  }
+                                },
+                                child: Text(
+                                  'Login',
+                                  style: GoogleFonts.inter(),
+                                ),
+                              )
+                            : const CircularProgressIndicator(),
                       ),
                     );
                   },
@@ -114,6 +125,30 @@ class _LoginViewState extends State<LoginView> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  void showErrorSnackbar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Column(
+          crossAxisAlignment: .start,
+          children: [
+            Text(
+              AppLocalizations.of(context)!.errorTitle,
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: Colors.white),
+            ),
+            Text(
+              AppLocalizations.of(context)!.loginErrorSubtitle,
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: Colors.white),
+            ),
+          ],
         ),
       ),
     );

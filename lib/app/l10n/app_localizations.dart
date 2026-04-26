@@ -98,6 +98,18 @@ abstract class AppLocalizations {
     Locale('pt'),
   ];
 
+  /// No description provided for @splashPageBackgroundPermissionDeniedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You must enable the permission to run the app in the background to ensure that the app functions properly.'**
+  String get splashPageBackgroundPermissionDeniedTitle;
+
+  /// No description provided for @splashPageEnableBackgroundPermissionButtonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable permission'**
+  String get splashPageEnableBackgroundPermissionButtonTitle;
+
   /// No description provided for @loginTitle.
   ///
   /// In en, this message translates to:
@@ -140,6 +152,24 @@ abstract class AppLocalizations {
   /// **'Don\'t have an account? Sign up here!'**
   String get loginRegisterTitle;
 
+  /// No description provided for @errorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'An error has occurred!'**
+  String get errorTitle;
+
+  /// No description provided for @errorSubTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'An error has occurred! Please check your internet connection.'**
+  String get errorSubTitle;
+
+  /// No description provided for @loginErrorSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Please verify your password and email.'**
+  String get loginErrorSubtitle;
+
   /// No description provided for @registerTitle.
   ///
   /// In en, this message translates to:
@@ -181,6 +211,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Strong'**
   String get registerPasswordStrengthStrong;
+
+  /// No description provided for @homeBottomNavigationItemFasting.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting'**
+  String get homeBottomNavigationItemFasting;
+
+  /// No description provided for @homeBottomNavigationItemDiary.
+  ///
+  /// In en, this message translates to:
+  /// **'Diary'**
+  String get homeBottomNavigationItemDiary;
+
+  /// No description provided for @homeBottomNavigationItemProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get homeBottomNavigationItemProfile;
 }
 
 class _AppLocalizationsDelegate

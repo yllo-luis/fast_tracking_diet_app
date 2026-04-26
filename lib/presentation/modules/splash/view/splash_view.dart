@@ -15,7 +15,7 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   void initState() {
-    controller.checkIfUserIsLoggedIn();
+    controller.init();
     super.initState();
   }
 

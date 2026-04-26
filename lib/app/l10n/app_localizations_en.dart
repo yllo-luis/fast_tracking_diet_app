@@ -9,6 +9,14 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get splashPageBackgroundPermissionDeniedTitle =>
+      'You must enable the permission to run the app in the background to ensure that the app functions properly.';
+
+  @override
+  String get splashPageEnableBackgroundPermissionButtonTitle =>
+      'Enable permission';
+
+  @override
   String get loginTitle => 'Sign in';
 
   @override
@@ -31,6 +39,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginRegisterTitle => 'Don\'t have an account? Sign up here!';
 
   @override
+  String get errorTitle => 'An error has occurred!';
+
+  @override
+  String get errorSubTitle =>
+      'An error has occurred! Please check your internet connection.';
+
+  @override
+  String get loginErrorSubtitle => 'Please verify your password and email.';
+
+  @override
   String get registerTitle => 'Start your health journey today';
 
   @override
@@ -51,4 +69,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get registerPasswordStrengthStrong => 'Strong';
+
+  @override
+  String get homeBottomNavigationItemFasting => 'Fasting';
+
+  @override
+  String get homeBottomNavigationItemDiary => 'Diary';
+
+  @override
+  String get homeBottomNavigationItemProfile => 'Profile';
 }

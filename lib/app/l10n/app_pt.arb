@@ -1,4 +1,7 @@
 {
+  "splashPageBackgroundPermissionDeniedTitle": "É necessário ativação da permissão a execução do aplicativo em segundo plano para garantir o funcionamento completo do app.",
+  "splashPageEnableBackgroundPermissionButtonTitle": "Ativar permissão",
+
   "loginTitle": "Fazer login",
   "loginSubTitle": "Realize login para aproveitar todas as funções do Fast Tracking!",
   "loginEmailFieldHintText": "Digite seu email aqui.",
@@ -7,6 +10,11 @@
   "loginInvalidPasswordText": "Por favor digite uma senha valida",
   "loginRegisterTitle": "Não possui conta? Registre aqui!",
 
+  "errorTitle": "Ocorreu um erro!",
+  "errorSubTitle": "Ocorreu um erro! Verifique sua conexão com a internet.",
+
+  "loginErrorSubtitle": "Verifique seu email e senha.",
+
   "registerTitle": "Comece sua jornada de saúde hoje",
   "registerSubtitle": "Cadastre-se para alcançar seus objetivos de saúde com o suporte que você precisa.",
   "registerButtonTitle": "Registrar",
@@ -14,5 +22,9 @@
 
   "registerPasswordStrengthWeak": "Senha fraca",
   "registerPasswordStrengthMedium": "Senha mediana",
-  "registerPasswordStrengthStrong": "Senha forte"
+  "registerPasswordStrengthStrong": "Senha forte",
+
+  "homeBottomNavigationItemFasting": "Jejum",
+  "homeBottomNavigationItemDiary": "Diario",
+  "homeBottomNavigationItemProfile": "Perfil"
 }

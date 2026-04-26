@@ -9,6 +9,14 @@ class AppLocalizationsPt extends AppLocalizations {
   AppLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
+  String get splashPageBackgroundPermissionDeniedTitle =>
+      'É necessário ativação da permissão a execução do aplicativo em segundo plano para garantir o funcionamento completo do app.';
+
+  @override
+  String get splashPageEnableBackgroundPermissionButtonTitle =>
+      'Ativar permissão';
+
+  @override
   String get loginTitle => 'Fazer login';
 
   @override
@@ -31,6 +39,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get loginRegisterTitle => 'Não possui conta? Registre aqui!';
 
   @override
+  String get errorTitle => 'Ocorreu um erro!';
+
+  @override
+  String get errorSubTitle =>
+      'Ocorreu um erro! Verifique sua conexão com a internet.';
+
+  @override
+  String get loginErrorSubtitle => 'Verifique seu email e senha.';
+
+  @override
   String get registerTitle => 'Comece sua jornada de saúde hoje';
 
   @override
@@ -51,4 +69,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get registerPasswordStrengthStrong => 'Senha forte';
+
+  @override
+  String get homeBottomNavigationItemFasting => 'Jejum';
+
+  @override
+  String get homeBottomNavigationItemDiary => 'Diario';
+
+  @override
+  String get homeBottomNavigationItemProfile => 'Perfil';
 }

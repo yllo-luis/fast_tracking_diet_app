@@ -1,3 +1,3 @@
 class PresentationConstants {
-  static final animationDuration = const Duration(milliseconds: 250,);
+  static final animationDuration = const Duration(milliseconds: 250);
 }

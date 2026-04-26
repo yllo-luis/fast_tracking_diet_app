@@ -26,5 +26,29 @@
 
   "homeBottomNavigationItemFasting": "Fasting",
   "homeBottomNavigationItemDiary": "Diary",
-  "homeBottomNavigationItemProfile": "Profile"
+  "homeBottomNavigationItemProfile": "Profile",
+
+  "homeFastingLayoutNotFasting": "Not fasting",
+  "homeFastingLayoutTimeSinceLastFasting": "Time since the last fast",
+  "homeFastingLayoutStartFastingButton": "Start fasting",
+  "homeFastingLayoutPauseFastingButton": "Break the fast",
+  "homeFastingLayoutFastingDateStart": "Start",
+  "homeFastingLayoutFastingDateEnd": "End",
+  "homeFastingLayoutTipsTitle": "Tips",
+
+  "homeFastingLayoutTipStartSlowlyTitle": "Start slowly",
+  "homeFastingLayoutTipStartSlowlyBody": "Do not attempt long fasts right away. Start with shorter windows, such as the 12/12 protocol (12 hours of fasting and 12 of eating), and gradually increase as your body adapts.",
+  "homeFastingLayoutTipDrinkWaterTitle": "Stay hydrated",
+  "homeFastingLayoutTipDrinkWaterBody": "Hydration is essential. Drink plenty of water, tea, or black coffee during your fasting period to help manage hunger and keep your metabolism functioning well.",
+  "homeFastingLayoutFoodQualityTitle": "Prioritize food quality",
+  "homeFastingLayoutFoodQualityBody": "When it is time to eat, focus on nutrient-dense foods. Prioritize proteins, healthy fats, fiber, and vegetables to ensure you are nourishing your body and staying full for longer.",
+  "homeFastingLayoutListenBodyTitle": "Listen to your body",
+  "homeFastingLayoutListenBody": "Fasting should not cause extreme distress. If you feel dizzy, excessively weak, or unwell, break your fast. It is important to distinguish between psychological hunger and signals that your body truly needs energy.",
+
+  "homeFastingRoutineSelectTitle": "Select a fasting program",
+  "homeFastingRoutineSelectCurrentPlan": "Current plan",
+  "homeFastingRoutineSelectQuickPlan": "Quick plans",
+  "homeFastingRoutineSelectCustomPlan": "Custom plans",
+  "homeFastingRoutineSelectCustomPlanEmpty": "Save a plan as a template to view here."
+
 }

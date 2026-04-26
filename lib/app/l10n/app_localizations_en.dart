@@ -78,4 +78,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeBottomNavigationItemProfile => 'Profile';
+
+  @override
+  String get homeFastingLayoutNotFasting => 'Not fasting';
+
+  @override
+  String get homeFastingLayoutTimeSinceLastFasting =>
+      'Time since the last fast';
+
+  @override
+  String get homeFastingLayoutStartFastingButton => 'Start fasting';
+
+  @override
+  String get homeFastingLayoutPauseFastingButton => 'Break the fast';
+
+  @override
+  String get homeFastingLayoutFastingDateStart => 'Start';
+
+  @override
+  String get homeFastingLayoutFastingDateEnd => 'End';
+
+  @override
+  String get homeFastingLayoutTipsTitle => 'Tips';
+
+  @override
+  String get homeFastingLayoutTipStartSlowlyTitle => 'Start slowly';
+
+  @override
+  String get homeFastingLayoutTipStartSlowlyBody =>
+      'Do not attempt long fasts right away. Start with shorter windows, such as the 12/12 protocol (12 hours of fasting and 12 of eating), and gradually increase as your body adapts.';
+
+  @override
+  String get homeFastingLayoutTipDrinkWaterTitle => 'Stay hydrated';
+
+  @override
+  String get homeFastingLayoutTipDrinkWaterBody =>
+      'Hydration is essential. Drink plenty of water, tea, or black coffee during your fasting period to help manage hunger and keep your metabolism functioning well.';
+
+  @override
+  String get homeFastingLayoutFoodQualityTitle => 'Prioritize food quality';
+
+  @override
+  String get homeFastingLayoutFoodQualityBody =>
+      'When it is time to eat, focus on nutrient-dense foods. Prioritize proteins, healthy fats, fiber, and vegetables to ensure you are nourishing your body and staying full for longer.';
+
+  @override
+  String get homeFastingLayoutListenBodyTitle => 'Listen to your body';
+
+  @override
+  String get homeFastingLayoutListenBody =>
+      'Fasting should not cause extreme distress. If you feel dizzy, excessively weak, or unwell, break your fast. It is important to distinguish between psychological hunger and signals that your body truly needs energy.';
+
+  @override
+  String get homeFastingRoutineSelectTitle => 'Select a fasting program';
+
+  @override
+  String get homeFastingRoutineSelectCurrentPlan => 'Current plan';
+
+  @override
+  String get homeFastingRoutineSelectQuickPlan => 'Quick plans';
+
+  @override
+  String get homeFastingRoutineSelectCustomPlan => 'Custom plans';
+
+  @override
+  String get homeFastingRoutineSelectCustomPlanEmpty =>
+      'Save a plan as a template to view here.';
 }

@@ -229,6 +229,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get homeBottomNavigationItemProfile;
+
+  /// No description provided for @homeFastingLayoutNotFasting.
+  ///
+  /// In en, this message translates to:
+  /// **'Not fasting'**
+  String get homeFastingLayoutNotFasting;
+
+  /// No description provided for @homeFastingLayoutTimeSinceLastFasting.
+  ///
+  /// In en, this message translates to:
+  /// **'Time since the last fast'**
+  String get homeFastingLayoutTimeSinceLastFasting;
+
+  /// No description provided for @homeFastingLayoutStartFastingButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Start fasting'**
+  String get homeFastingLayoutStartFastingButton;
+
+  /// No description provided for @homeFastingLayoutPauseFastingButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Break the fast'**
+  String get homeFastingLayoutPauseFastingButton;
+
+  /// No description provided for @homeFastingLayoutFastingDateStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get homeFastingLayoutFastingDateStart;
+
+  /// No description provided for @homeFastingLayoutFastingDateEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'End'**
+  String get homeFastingLayoutFastingDateEnd;
+
+  /// No description provided for @homeFastingLayoutTipsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tips'**
+  String get homeFastingLayoutTipsTitle;
+
+  /// No description provided for @homeFastingLayoutTipStartSlowlyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start slowly'**
+  String get homeFastingLayoutTipStartSlowlyTitle;
+
+  /// No description provided for @homeFastingLayoutTipStartSlowlyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Do not attempt long fasts right away. Start with shorter windows, such as the 12/12 protocol (12 hours of fasting and 12 of eating), and gradually increase as your body adapts.'**
+  String get homeFastingLayoutTipStartSlowlyBody;
+
+  /// No description provided for @homeFastingLayoutTipDrinkWaterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay hydrated'**
+  String get homeFastingLayoutTipDrinkWaterTitle;
+
+  /// No description provided for @homeFastingLayoutTipDrinkWaterBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Hydration is essential. Drink plenty of water, tea, or black coffee during your fasting period to help manage hunger and keep your metabolism functioning well.'**
+  String get homeFastingLayoutTipDrinkWaterBody;
+
+  /// No description provided for @homeFastingLayoutFoodQualityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Prioritize food quality'**
+  String get homeFastingLayoutFoodQualityTitle;
+
+  /// No description provided for @homeFastingLayoutFoodQualityBody.
+  ///
+  /// In en, this message translates to:
+  /// **'When it is time to eat, focus on nutrient-dense foods. Prioritize proteins, healthy fats, fiber, and vegetables to ensure you are nourishing your body and staying full for longer.'**
+  String get homeFastingLayoutFoodQualityBody;
+
+  /// No description provided for @homeFastingLayoutListenBodyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen to your body'**
+  String get homeFastingLayoutListenBodyTitle;
+
+  /// No description provided for @homeFastingLayoutListenBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting should not cause extreme distress. If you feel dizzy, excessively weak, or unwell, break your fast. It is important to distinguish between psychological hunger and signals that your body truly needs energy.'**
+  String get homeFastingLayoutListenBody;
+
+  /// No description provided for @homeFastingRoutineSelectTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a fasting program'**
+  String get homeFastingRoutineSelectTitle;
+
+  /// No description provided for @homeFastingRoutineSelectCurrentPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Current plan'**
+  String get homeFastingRoutineSelectCurrentPlan;
+
+  /// No description provided for @homeFastingRoutineSelectQuickPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick plans'**
+  String get homeFastingRoutineSelectQuickPlan;
+
+  /// No description provided for @homeFastingRoutineSelectCustomPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom plans'**
+  String get homeFastingRoutineSelectCustomPlan;
+
+  /// No description provided for @homeFastingRoutineSelectCustomPlanEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Save a plan as a template to view here.'**
+  String get homeFastingRoutineSelectCustomPlanEmpty;
 }
 
 class _AppLocalizationsDelegate

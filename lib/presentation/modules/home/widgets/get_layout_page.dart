@@ -12,7 +12,7 @@ class GetLayoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (homeItems) {
       case HomeItems.fasting:
-        return FastingComponent();
+        return const FastingComponent();
       case HomeItems.diary:
         return const Placeholder();
       case HomeItems.userProfile:

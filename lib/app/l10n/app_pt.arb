@@ -26,5 +26,28 @@
 
   "homeBottomNavigationItemFasting": "Jejum",
   "homeBottomNavigationItemDiary": "Diario",
-  "homeBottomNavigationItemProfile": "Perfil"
+  "homeBottomNavigationItemProfile": "Perfil",
+
+  "homeFastingLayoutNotFasting": "Fora de jejum",
+  "homeFastingLayoutTimeSinceLastFasting": "Tempo desde o último jejum",
+  "homeFastingLayoutStartFastingButton": "Iniciar jejum",
+  "homeFastingLayoutPauseFastingButton": "Pausar jejum",
+  "homeFastingLayoutFastingDateStart": "Início",
+  "homeFastingLayoutFastingDateEnd": "Fim",
+  "homeFastingLayoutTipsTitle": "Dicas",
+
+  "homeFastingLayoutTipStartSlowlyTitle": "Comece devagar",
+  "homeFastingLayoutTipStartSlowlyBody": "Não tente fazer jejuns longos de imediato. Comece com janelas menores, como o protocolo 12/12 (12 horas de jejum e 12 de alimentação), e aumente gradualmente conforme seu corpo se adaptar.",
+  "homeFastingLayoutTipDrinkWaterTitle": "Mantenha-se hidratado",
+  "homeFastingLayoutTipDrinkWaterBody": "A hidratação é essencial. Beba bastante água, chá ou café sem açúcar durante o período de jejum para ajudar a controlar a fome e manter o metabolismo funcionando bem.",
+  "homeFastingLayoutFoodQualityTitle": "Priorize a qualidade dos alimentos",
+  "homeFastingLayoutFoodQualityBody": "Quando chegar a hora de comer, foque em alimentos nutritivos. Priorize proteínas, gorduras saudáveis, fibras e vegetais para garantir que você esteja nutrindo seu corpo e mantendo a saciedade por mais tempo.",
+  "homeFastingLayoutListenBodyTitle": "Ouça o seu corpo",
+  "homeFastingLayoutListenBody": "O jejum não deve causar sofrimento extremo. Se sentir tonturas, fraqueza excessiva ou mal-estar, interrompa o jejum. É importante saber diferenciar a fome psicológica dos sinais de que seu corpo precisa de energia.",
+
+  "homeFastingRoutineSelectTitle": "Selecione o programa de jejum",
+  "homeFastingRoutineSelectCurrentPlan": "Plano atual",
+  "homeFastingRoutineSelectQuickPlan": "Planos rápidos",
+  "homeFastingRoutineSelectCustomPlan": "Planos customizados",
+  "homeFastingRoutineSelectCustomPlanEmpty": "Salve um plano como modelo para ver aqui."
 }

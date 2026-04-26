@@ -78,4 +78,71 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get homeBottomNavigationItemProfile => 'Perfil';
+
+  @override
+  String get homeFastingLayoutNotFasting => 'Fora de jejum';
+
+  @override
+  String get homeFastingLayoutTimeSinceLastFasting =>
+      'Tempo desde o último jejum';
+
+  @override
+  String get homeFastingLayoutStartFastingButton => 'Iniciar jejum';
+
+  @override
+  String get homeFastingLayoutPauseFastingButton => 'Pausar jejum';
+
+  @override
+  String get homeFastingLayoutFastingDateStart => 'Início';
+
+  @override
+  String get homeFastingLayoutFastingDateEnd => 'Fim';
+
+  @override
+  String get homeFastingLayoutTipsTitle => 'Dicas';
+
+  @override
+  String get homeFastingLayoutTipStartSlowlyTitle => 'Comece devagar';
+
+  @override
+  String get homeFastingLayoutTipStartSlowlyBody =>
+      'Não tente fazer jejuns longos de imediato. Comece com janelas menores, como o protocolo 12/12 (12 horas de jejum e 12 de alimentação), e aumente gradualmente conforme seu corpo se adaptar.';
+
+  @override
+  String get homeFastingLayoutTipDrinkWaterTitle => 'Mantenha-se hidratado';
+
+  @override
+  String get homeFastingLayoutTipDrinkWaterBody =>
+      'A hidratação é essencial. Beba bastante água, chá ou café sem açúcar durante o período de jejum para ajudar a controlar a fome e manter o metabolismo funcionando bem.';
+
+  @override
+  String get homeFastingLayoutFoodQualityTitle =>
+      'Priorize a qualidade dos alimentos';
+
+  @override
+  String get homeFastingLayoutFoodQualityBody =>
+      'Quando chegar a hora de comer, foque em alimentos nutritivos. Priorize proteínas, gorduras saudáveis, fibras e vegetais para garantir que você esteja nutrindo seu corpo e mantendo a saciedade por mais tempo.';
+
+  @override
+  String get homeFastingLayoutListenBodyTitle => 'Ouça o seu corpo';
+
+  @override
+  String get homeFastingLayoutListenBody =>
+      'O jejum não deve causar sofrimento extremo. Se sentir tonturas, fraqueza excessiva ou mal-estar, interrompa o jejum. É importante saber diferenciar a fome psicológica dos sinais de que seu corpo precisa de energia.';
+
+  @override
+  String get homeFastingRoutineSelectTitle => 'Selecione o programa de jejum';
+
+  @override
+  String get homeFastingRoutineSelectCurrentPlan => 'Plano atual';
+
+  @override
+  String get homeFastingRoutineSelectQuickPlan => 'Planos rápidos';
+
+  @override
+  String get homeFastingRoutineSelectCustomPlan => 'Planos customizados';
+
+  @override
+  String get homeFastingRoutineSelectCustomPlanEmpty =>
+      'Salve um plano como modelo para ver aqui.';
 }

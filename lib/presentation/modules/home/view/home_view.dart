@@ -23,16 +23,12 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Fast Tracking', style: GoogleFonts.pacifico(fontSize: 28)),
-        elevation: 0,
-      ),
       body: PageView.builder(
         controller: pageController,
-        physics: const NeverScrollableScrollPhysics(),
+        onPageChanged: (value) => controller.setCurrentPage = value,
         itemBuilder: (context, index) =>
             GetLayoutPage(homeItems: HomeItems.values[index]),
+        itemCount: HomeItems.values.length,
       ),
       bottomNavigationBar: ValueListenableBuilder<int>(
         valueListenable: controller.getCurrentPage,
@@ -46,7 +42,6 @@ class _HomeViewState extends State<HomeView> {
                 duration: PresentationConstants.animationDuration,
                 curve: Curves.easeIn,
               );
-              controller.setCurrentPage = value;
             },
           );
         },

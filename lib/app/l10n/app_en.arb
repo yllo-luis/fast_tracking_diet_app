@@ -12,6 +12,8 @@
 
   "errorTitle": "An error has occurred!",
   "errorSubTitle": "An error has occurred! Please check your internet connection.",
+  "errorSubTitle2": "Ocorreu um erro! Tente novamente mais tarde.",
+  "errorValueTitle": "Please enter a valid value.",
 
   "loginErrorSubtitle": "Please verify your password and email.",
 
@@ -24,6 +26,9 @@
   "registerPasswordStrengthMedium": "Medium",
   "registerPasswordStrengthStrong": "Strong",
 
+  "yesTitle": "Yes",
+  "noTitle": "No",
+
   "homeBottomNavigationItemFasting": "Fasting",
   "homeBottomNavigationItemDiary": "Diary",
   "homeBottomNavigationItemProfile": "Profile",
@@ -31,10 +36,25 @@
   "homeFastingLayoutNotFasting": "Not fasting",
   "homeFastingLayoutTimeSinceLastFasting": "Time since the last fast",
   "homeFastingLayoutStartFastingButton": "Start fasting",
-  "homeFastingLayoutPauseFastingButton": "Break the fast",
+  "homeFastingLayoutPauseFastingButton": "Pause the fast",
+  "homeFastingLayoutResumeFastingButton": "Resume fast",
+  "homeFastingLayoutCancelFastingButton": "Break fast",
   "homeFastingLayoutFastingDateStart": "Start",
   "homeFastingLayoutFastingDateEnd": "End",
   "homeFastingLayoutTipsTitle": "Tips",
+
+  "homeFastingCancelFastingBody": "Are you sure you want to stop intermittent fasting?",
+
+  "homeFastingShareButtonText": "Check it out—I'm using the Fast Tracking App with the {programType} plan. Check out the app in the store!",
+  "@homeFastingShareButtonText": {
+    "description": "Texto para compartilhamento do progresso de jejum",
+    "placeholders": {
+      "programType": {
+        "type": "String",
+        "example": "16h/8h"
+      }
+    }
+  },
 
   "homeFastingLayoutTipStartSlowlyTitle": "Start slowly",
   "homeFastingLayoutTipStartSlowlyBody": "Do not attempt long fasts right away. Start with shorter windows, such as the 12/12 protocol (12 hours of fasting and 12 of eating), and gradually increase as your body adapts.",
@@ -49,6 +69,14 @@
   "homeFastingRoutineSelectCurrentPlan": "Current plan",
   "homeFastingRoutineSelectQuickPlan": "Quick plans",
   "homeFastingRoutineSelectCustomPlan": "Custom plans",
-  "homeFastingRoutineSelectCustomPlanEmpty": "Save a plan as a template to view here."
+  "homeFastingRoutineSelectCustomPlanEmpty": "Save a plan as a template to view here.",
 
+  "homeFastingRoutineCustomFastingTipSchedule": "Choose your own schedule: Don’t try to stick to a fixed schedule if it doesn’t work for you. Start with a 14- or 16-hour fast and adjust your eating window to fit your day, not the other way around.",
+  "homeFastingRoutineCustomFastingTipWater": "Stay well-hydrated: Whenever you feel hungry between meals, drink a glass of water, coffee, or unsweetened tea. This helps control the urge to eat without breaking your fast.",
+  "homeFastingRoutineCustomFastingTipBreakfast": "Your first meal matters: When you eat, avoid bread, pasta, or sweets right away. Opt for eggs, meats, salads, or healthy fats (like avocado). This prevents post-lunch drowsiness and keeps your energy levels high.",
+  "homeFastingRoutineCustomFastingTipWork": "Use fasting to work better: If you need to focus on a difficult task, take advantage of the fasting period. Many people feel more alert and focused without the heavy digestion weighing on their bodies.",
+
+  "homeFastingRoutineCustomFastingHintFastingTime": "Fasting time",
+  "homeFastingRoutineCustomFastingHintRestTime": "Rest period",
+  "homeFastingRoutineCustomCreateButton": "Create a routine"
 }

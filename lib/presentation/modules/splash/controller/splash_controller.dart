@@ -29,18 +29,18 @@ class SplashController {
   Future<void> checkIfBackgroundServiceIsEnabled() async {
     bool hasBackgroundPermission = await FlutterBackground.hasPermissions;
 
-    if (hasBackgroundPermission == false) {
-      final androidConfig = FlutterBackgroundAndroidConfig(
-        notificationTitle: "Fasting Tracking Diet App",
-        notificationText:
-            "Background notification for keeping the example app running in the background",
-        notificationImportance: AndroidNotificationImportance.normal,
-        notificationIcon: AndroidResource(
-          name: 'background_icon',
-          defType: 'drawable',
-        ),
-      );
+    final androidConfig = FlutterBackgroundAndroidConfig(
+      notificationTitle: "Fasting Tracking Diet App",
+      notificationText:
+      "Background notification for keeping the example app running in the background",
+      notificationImportance: AndroidNotificationImportance.normal,
+      notificationIcon: AndroidResource(
+        name: 'background_icon',
+        defType: 'drawable',
+      ),
+    );
 
+    if (hasBackgroundPermission == false) {
       bool success = await FlutterBackground.initialize(
         androidConfig: androidConfig,
       );
@@ -49,5 +49,9 @@ class SplashController {
         Modular.to.pushReplacementNamed('background_permission_denied_view');
       }
     }
+
+    await FlutterBackground.initialize(
+      androidConfig: androidConfig,
+    );
   }
 }

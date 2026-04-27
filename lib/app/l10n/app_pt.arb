@@ -12,6 +12,8 @@
 
   "errorTitle": "Ocorreu um erro!",
   "errorSubTitle": "Ocorreu um erro! Verifique sua conexão com a internet.",
+  "errorSubTitle2": "Ocorreu um erro! Tente novamente mais tarde.",
+  "errorValueTitle": "Por favor digite um valor valido.",
 
   "loginErrorSubtitle": "Verifique seu email e senha.",
 
@@ -24,6 +26,9 @@
   "registerPasswordStrengthMedium": "Senha mediana",
   "registerPasswordStrengthStrong": "Senha forte",
 
+  "yesTitle": "Sim",
+  "noTitle": "Não",
+
   "homeBottomNavigationItemFasting": "Jejum",
   "homeBottomNavigationItemDiary": "Diario",
   "homeBottomNavigationItemProfile": "Perfil",
@@ -32,9 +37,24 @@
   "homeFastingLayoutTimeSinceLastFasting": "Tempo desde o último jejum",
   "homeFastingLayoutStartFastingButton": "Iniciar jejum",
   "homeFastingLayoutPauseFastingButton": "Pausar jejum",
+  "homeFastingLayoutResumeFastingButton": "Continuar jejum",
+  "homeFastingLayoutCancelFastingButton": "Cancelar jejum",
   "homeFastingLayoutFastingDateStart": "Início",
   "homeFastingLayoutFastingDateEnd": "Fim",
   "homeFastingLayoutTipsTitle": "Dicas",
+
+  "homeFastingCancelFastingBody": "Tem certeza que deseja cancelar o jejum intermitente?",
+
+  "homeFastingShareButtonText": "Veja estou utilizando o Fast Tracking App com o regime {programType} veja o app na loja!",
+  "@homeFastingShareButtonText": {
+    "description": "Texto para compartilhamento do progresso de jejum",
+    "placeholders": {
+      "programType": {
+        "type": "String",
+        "example": "16h/8h"
+      }
+    }
+  },
 
   "homeFastingLayoutTipStartSlowlyTitle": "Comece devagar",
   "homeFastingLayoutTipStartSlowlyBody": "Não tente fazer jejuns longos de imediato. Comece com janelas menores, como o protocolo 12/12 (12 horas de jejum e 12 de alimentação), e aumente gradualmente conforme seu corpo se adaptar.",
@@ -49,5 +69,14 @@
   "homeFastingRoutineSelectCurrentPlan": "Plano atual",
   "homeFastingRoutineSelectQuickPlan": "Planos rápidos",
   "homeFastingRoutineSelectCustomPlan": "Planos customizados",
-  "homeFastingRoutineSelectCustomPlanEmpty": "Salve um plano como modelo para ver aqui."
+  "homeFastingRoutineSelectCustomPlanEmpty": "Salve um plano como modelo para ver aqui.",
+
+  "homeFastingRoutineCustomFastingTipSchedule": "Escolha o seu horário: Não tente seguir um horário fixo se não funcionar para você. Comece com 14 ou 16 horas de jejum e ajuste o horário de comer conforme o seu dia, não o contrário",
+  "homeFastingRoutineCustomFastingTipWater": "Capriche na hidratação: Sempre que sentir fome fora da hora, beba um copo de água, café ou chá sem açúcar. Isso ajuda a controlar a vontade de comer sem quebrar o jejum.",
+  "homeFastingRoutineCustomFastingTipBreakfast": "A primeira refeição importa: Quando for comer, evite pães, massas ou doces logo de cara. Prefira ovos, carnes, saladas ou gorduras boas (como abacate). Isso evita o sono após o almoço e mantém a energia alta.",
+  "homeFastingRoutineCustomFastingTipWork": "Use o jejum para trabalhar melhor: Se você precisa focar em uma tarefa difícil, aproveite o período de jejum. Muitas pessoas se sentem mais alertas e focadas sem a digestão pesada ocupando o corpo.",
+
+  "homeFastingRoutineCustomFastingHintFastingTime": "Tempo de jejum",
+  "homeFastingRoutineCustomFastingHintRestTime": "Tempo de descanso",
+  "homeFastingRoutineCustomCreateButton": "Criar rotina"
 }

@@ -46,6 +46,12 @@ class AppLocalizationsPt extends AppLocalizations {
       'Ocorreu um erro! Verifique sua conexão com a internet.';
 
   @override
+  String get errorSubTitle2 => 'Ocorreu um erro! Tente novamente mais tarde.';
+
+  @override
+  String get errorValueTitle => 'Por favor digite um valor valido.';
+
+  @override
   String get loginErrorSubtitle => 'Verifique seu email e senha.';
 
   @override
@@ -71,6 +77,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get registerPasswordStrengthStrong => 'Senha forte';
 
   @override
+  String get yesTitle => 'Sim';
+
+  @override
+  String get noTitle => 'Não';
+
+  @override
   String get homeBottomNavigationItemFasting => 'Jejum';
 
   @override
@@ -93,6 +105,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get homeFastingLayoutPauseFastingButton => 'Pausar jejum';
 
   @override
+  String get homeFastingLayoutResumeFastingButton => 'Continuar jejum';
+
+  @override
+  String get homeFastingLayoutCancelFastingButton => 'Cancelar jejum';
+
+  @override
   String get homeFastingLayoutFastingDateStart => 'Início';
 
   @override
@@ -100,6 +118,15 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get homeFastingLayoutTipsTitle => 'Dicas';
+
+  @override
+  String get homeFastingCancelFastingBody =>
+      'Tem certeza que deseja cancelar o jejum intermitente?';
+
+  @override
+  String homeFastingShareButtonText(String programType) {
+    return 'Veja estou utilizando o Fast Tracking App com o regime $programType veja o app na loja!';
+  }
 
   @override
   String get homeFastingLayoutTipStartSlowlyTitle => 'Comece devagar';
@@ -145,4 +172,29 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get homeFastingRoutineSelectCustomPlanEmpty =>
       'Salve um plano como modelo para ver aqui.';
+
+  @override
+  String get homeFastingRoutineCustomFastingTipSchedule =>
+      'Escolha o seu horário: Não tente seguir um horário fixo se não funcionar para você. Comece com 14 ou 16 horas de jejum e ajuste o horário de comer conforme o seu dia, não o contrário';
+
+  @override
+  String get homeFastingRoutineCustomFastingTipWater =>
+      'Capriche na hidratação: Sempre que sentir fome fora da hora, beba um copo de água, café ou chá sem açúcar. Isso ajuda a controlar a vontade de comer sem quebrar o jejum.';
+
+  @override
+  String get homeFastingRoutineCustomFastingTipBreakfast =>
+      'A primeira refeição importa: Quando for comer, evite pães, massas ou doces logo de cara. Prefira ovos, carnes, saladas ou gorduras boas (como abacate). Isso evita o sono após o almoço e mantém a energia alta.';
+
+  @override
+  String get homeFastingRoutineCustomFastingTipWork =>
+      'Use o jejum para trabalhar melhor: Se você precisa focar em uma tarefa difícil, aproveite o período de jejum. Muitas pessoas se sentem mais alertas e focadas sem a digestão pesada ocupando o corpo.';
+
+  @override
+  String get homeFastingRoutineCustomFastingHintFastingTime => 'Tempo de jejum';
+
+  @override
+  String get homeFastingRoutineCustomFastingHintRestTime => 'Tempo de descanso';
+
+  @override
+  String get homeFastingRoutineCustomCreateButton => 'Criar rotina';
 }

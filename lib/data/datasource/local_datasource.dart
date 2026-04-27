@@ -258,7 +258,7 @@ class LocalDatasource implements LocalDatasourceContract {
     }
 
     await database?.insert('fasting_routines', {
-      'fasting_period_ms': fastingModel.fastingRestPeriod.inMilliseconds,
+      'fasting_period_ms': fastingModel.fastingPeriod.inMilliseconds,
       'fasting_rest_period_ms': fastingModel.fastingRestPeriod.inMilliseconds,
       'is_custom': fastingModel.isCustom ? 1 : 0,
     });

@@ -6,6 +6,7 @@ import 'package:fast_tracking_diet_app/domain/usecases/fasting_history/create_fa
 import 'package:fast_tracking_diet_app/domain/usecases/fasting_history/get_fasting_history_per_user_id_usecase.dart';
 import 'package:fast_tracking_diet_app/domain/usecases/fasting_routine/add_fasting_routine_usecase.dart';
 import 'package:fast_tracking_diet_app/domain/usecases/fasting_routine/get_fasting_routines_usecase.dart';
+import 'package:fast_tracking_diet_app/domain/usecases/fasting_routine/remove_fasting_routine_usecase.dart';
 import 'package:fast_tracking_diet_app/domain/usecases/local_user/create_local_user_usecase.dart';
 import 'package:fast_tracking_diet_app/presentation/modules/home/controller/home_controller.dart';
 import 'package:fast_tracking_diet_app/presentation/modules/home/store/home_store.dart';
@@ -47,6 +48,9 @@ class HomeModule extends Module {
         ),
         getFastingHistoryPerUserIdUseCase: GetFastingHistoryPerUserIdUseCase(
           Modular.get<FastingRepository>(),
+        ),
+        removeFastingRoutineUseCase: RemoveFastingRoutineUseCase(
+          Modular.get<FastingRoutineRepository>(),
         ),
       ),
     );

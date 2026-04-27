@@ -28,7 +28,7 @@ class FastingRoutineModel {
     return json.encode(<String, dynamic>{
       'id': id,
       'fasting_period': fastingPeriod.inMilliseconds,
-      'fasting_rest_period': fastingPeriod.inMilliseconds,
+      'fasting_rest_period': fastingRestPeriod.inMilliseconds,
       'is_custom': isCustom,
     });
   }

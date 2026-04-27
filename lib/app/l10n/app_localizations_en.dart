@@ -46,6 +46,12 @@ class AppLocalizationsEn extends AppLocalizations {
       'An error has occurred! Please check your internet connection.';
 
   @override
+  String get errorSubTitle2 => 'Ocorreu um erro! Tente novamente mais tarde.';
+
+  @override
+  String get errorValueTitle => 'Please enter a valid value.';
+
+  @override
   String get loginErrorSubtitle => 'Please verify your password and email.';
 
   @override
@@ -71,6 +77,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registerPasswordStrengthStrong => 'Strong';
 
   @override
+  String get yesTitle => 'Yes';
+
+  @override
+  String get noTitle => 'No';
+
+  @override
   String get homeBottomNavigationItemFasting => 'Fasting';
 
   @override
@@ -90,7 +102,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeFastingLayoutStartFastingButton => 'Start fasting';
 
   @override
-  String get homeFastingLayoutPauseFastingButton => 'Break the fast';
+  String get homeFastingLayoutPauseFastingButton => 'Pause the fast';
+
+  @override
+  String get homeFastingLayoutResumeFastingButton => 'Resume fast';
+
+  @override
+  String get homeFastingLayoutCancelFastingButton => 'Break fast';
 
   @override
   String get homeFastingLayoutFastingDateStart => 'Start';
@@ -100,6 +118,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeFastingLayoutTipsTitle => 'Tips';
+
+  @override
+  String get homeFastingCancelFastingBody =>
+      'Are you sure you want to stop intermittent fasting?';
+
+  @override
+  String homeFastingShareButtonText(String programType) {
+    return 'Check it out—I\'m using the Fast Tracking App with the $programType plan. Check out the app in the store!';
+  }
 
   @override
   String get homeFastingLayoutTipStartSlowlyTitle => 'Start slowly';
@@ -144,4 +171,29 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get homeFastingRoutineSelectCustomPlanEmpty =>
       'Save a plan as a template to view here.';
+
+  @override
+  String get homeFastingRoutineCustomFastingTipSchedule =>
+      'Choose your own schedule: Don’t try to stick to a fixed schedule if it doesn’t work for you. Start with a 14- or 16-hour fast and adjust your eating window to fit your day, not the other way around.';
+
+  @override
+  String get homeFastingRoutineCustomFastingTipWater =>
+      'Stay well-hydrated: Whenever you feel hungry between meals, drink a glass of water, coffee, or unsweetened tea. This helps control the urge to eat without breaking your fast.';
+
+  @override
+  String get homeFastingRoutineCustomFastingTipBreakfast =>
+      'Your first meal matters: When you eat, avoid bread, pasta, or sweets right away. Opt for eggs, meats, salads, or healthy fats (like avocado). This prevents post-lunch drowsiness and keeps your energy levels high.';
+
+  @override
+  String get homeFastingRoutineCustomFastingTipWork =>
+      'Use fasting to work better: If you need to focus on a difficult task, take advantage of the fasting period. Many people feel more alert and focused without the heavy digestion weighing on their bodies.';
+
+  @override
+  String get homeFastingRoutineCustomFastingHintFastingTime => 'Fasting time';
+
+  @override
+  String get homeFastingRoutineCustomFastingHintRestTime => 'Rest period';
+
+  @override
+  String get homeFastingRoutineCustomCreateButton => 'Create a routine';
 }

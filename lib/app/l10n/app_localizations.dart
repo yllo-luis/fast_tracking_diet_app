@@ -164,6 +164,18 @@ abstract class AppLocalizations {
   /// **'An error has occurred! Please check your internet connection.'**
   String get errorSubTitle;
 
+  /// No description provided for @errorSubTitle2.
+  ///
+  /// In en, this message translates to:
+  /// **'Ocorreu um erro! Tente novamente mais tarde.'**
+  String get errorSubTitle2;
+
+  /// No description provided for @errorValueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid value.'**
+  String get errorValueTitle;
+
   /// No description provided for @loginErrorSubtitle.
   ///
   /// In en, this message translates to:
@@ -212,6 +224,18 @@ abstract class AppLocalizations {
   /// **'Strong'**
   String get registerPasswordStrengthStrong;
 
+  /// No description provided for @yesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yesTitle;
+
+  /// No description provided for @noTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get noTitle;
+
   /// No description provided for @homeBottomNavigationItemFasting.
   ///
   /// In en, this message translates to:
@@ -251,8 +275,20 @@ abstract class AppLocalizations {
   /// No description provided for @homeFastingLayoutPauseFastingButton.
   ///
   /// In en, this message translates to:
-  /// **'Break the fast'**
+  /// **'Pause the fast'**
   String get homeFastingLayoutPauseFastingButton;
+
+  /// No description provided for @homeFastingLayoutResumeFastingButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume fast'**
+  String get homeFastingLayoutResumeFastingButton;
+
+  /// No description provided for @homeFastingLayoutCancelFastingButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Break fast'**
+  String get homeFastingLayoutCancelFastingButton;
 
   /// No description provided for @homeFastingLayoutFastingDateStart.
   ///
@@ -271,6 +307,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tips'**
   String get homeFastingLayoutTipsTitle;
+
+  /// No description provided for @homeFastingCancelFastingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to stop intermittent fasting?'**
+  String get homeFastingCancelFastingBody;
+
+  /// Texto para compartilhamento do progresso de jejum
+  ///
+  /// In en, this message translates to:
+  /// **'Check it out—I\'m using the Fast Tracking App with the {programType} plan. Check out the app in the store!'**
+  String homeFastingShareButtonText(String programType);
 
   /// No description provided for @homeFastingLayoutTipStartSlowlyTitle.
   ///
@@ -349,6 +397,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Save a plan as a template to view here.'**
   String get homeFastingRoutineSelectCustomPlanEmpty;
+
+  /// No description provided for @homeFastingRoutineCustomFastingTipSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your own schedule: Don’t try to stick to a fixed schedule if it doesn’t work for you. Start with a 14- or 16-hour fast and adjust your eating window to fit your day, not the other way around.'**
+  String get homeFastingRoutineCustomFastingTipSchedule;
+
+  /// No description provided for @homeFastingRoutineCustomFastingTipWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay well-hydrated: Whenever you feel hungry between meals, drink a glass of water, coffee, or unsweetened tea. This helps control the urge to eat without breaking your fast.'**
+  String get homeFastingRoutineCustomFastingTipWater;
+
+  /// No description provided for @homeFastingRoutineCustomFastingTipBreakfast.
+  ///
+  /// In en, this message translates to:
+  /// **'Your first meal matters: When you eat, avoid bread, pasta, or sweets right away. Opt for eggs, meats, salads, or healthy fats (like avocado). This prevents post-lunch drowsiness and keeps your energy levels high.'**
+  String get homeFastingRoutineCustomFastingTipBreakfast;
+
+  /// No description provided for @homeFastingRoutineCustomFastingTipWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Use fasting to work better: If you need to focus on a difficult task, take advantage of the fasting period. Many people feel more alert and focused without the heavy digestion weighing on their bodies.'**
+  String get homeFastingRoutineCustomFastingTipWork;
+
+  /// No description provided for @homeFastingRoutineCustomFastingHintFastingTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting time'**
+  String get homeFastingRoutineCustomFastingHintFastingTime;
+
+  /// No description provided for @homeFastingRoutineCustomFastingHintRestTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Rest period'**
+  String get homeFastingRoutineCustomFastingHintRestTime;
+
+  /// No description provided for @homeFastingRoutineCustomCreateButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a routine'**
+  String get homeFastingRoutineCustomCreateButton;
 }
 
 class _AppLocalizationsDelegate

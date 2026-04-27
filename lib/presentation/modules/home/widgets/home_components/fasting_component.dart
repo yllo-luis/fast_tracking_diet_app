@@ -2,6 +2,7 @@ import 'package:fast_tracking_diet_app/app/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:slide_countdown/slide_countdown.dart';
 
 import '../../../../../domain/entity/fasting_routine_model.dart';
 import '../../../../../utils/enums/home_fasting_layout_tips_enum.dart';
@@ -48,26 +49,34 @@ class _FastingComponentState extends State<FastingComponent> {
               children: [
                 AnimatedSwitcher(
                   duration: PresentationConstants.animationDuration,
-                  child: const SizedBox.shrink(),
+                  child: controller.homeStore.isDoingFasting
+                      ? IconButton(
+                          onPressed: () => controller.shareFasting(context: context),
+                          icon: Icon(Icons.share),
+                        )
+                      : SizedBox.shrink(),
                 ),
                 ValueListenableBuilder<bool>(
                   valueListenable: isLoadingPlans,
                   builder: (context, value, child) {
                     return Visibility(
                       visible: !value,
-                      child: FilledButton(
-                        onPressed: () => Modular.to
-                            .pushNamed('fasting_setting')
-                            .whenComplete(() => setState(() {})),
-                        child: Row(
-                          crossAxisAlignment: .start,
-                          spacing: 6,
-                          children: [
-                            Text(
-                              '${currentFastingPlan?.fastingPeriod.inHours}:${currentFastingPlan?.fastingRestPeriod.inHours}',
-                            ),
-                            Icon(Icons.edit),
-                          ],
+                      child: IgnorePointer(
+                        ignoring: controller.homeStore.isDoingFasting,
+                        child: FilledButton(
+                          onPressed: () => Modular.to
+                              .pushNamed('fasting_setting')
+                              .whenComplete(() => setState(() {})),
+                          child: Row(
+                            crossAxisAlignment: .start,
+                            spacing: 6,
+                            children: [
+                              Text(
+                                '${currentFastingPlan?.fastingPeriod.inHours}:${currentFastingPlan?.fastingRestPeriod.inHours}',
+                              ),
+                              Icon(Icons.edit),
+                            ],
+                          ),
                         ),
                       ),
                     );
@@ -77,60 +86,103 @@ class _FastingComponentState extends State<FastingComponent> {
             ),
             AnimatedSwitcher(
               duration: PresentationConstants.animationDuration,
+              child: controller.homeStore.isDoingFasting
+                  ? Center(
+                      child: Column(
+                        spacing: 12,
+                        children: [
+                          Icon(Icons.no_food, size: 72),
+                          Text(
+                            'Tempo restante: ',
+                            style: Theme.of(context).textTheme.bodyMedium
+                                ?.copyWith(color: Colors.black),
+                          ),
+                          SlideCountdown(
+                            streamDuration:
+                                controller.homeStore.currentFastingTime,
+                            countUp: false,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              color: Colors.deepPurple,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  : _MountNotInRoutineLayout(),
+            ),
+            Visibility(
+              visible: controller.homeStore.isDoingFasting,
+              replacement: SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  onPressed: () => setState(() {
+                    controller.startFasting();
+                  }),
+                  child: Text(
+                    AppLocalizations.of(
+                      context,
+                    )!.homeFastingLayoutStartFastingButton,
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyMedium?.copyWith(color: Colors.white),
+                  ),
+                ),
+              ),
               child: Column(
                 spacing: 12,
                 children: [
-                  Icon(Icons.food_bank, size: 72),
-                  Text(
-                    AppLocalizations.of(context)!.homeFastingLayoutNotFasting,
-                    style: Theme.of(context).textTheme.bodyLarge,
+                  SizedBox(
+                    width: double.infinity,
+                    child: FilledButton(
+                      onPressed: () {
+                        setState(() {
+                          controller.fastingStreamDuration?.isPaused == false
+                              ? controller.pauseFasting()
+                              : controller.resumeFasting();
+                        });
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStateColor.resolveWith(
+                          (states) => Colors.indigo,
+                        ),
+                      ),
+                      child: Text(
+                        controller.fastingStreamDuration?.isPaused == false
+                            ? AppLocalizations.of(
+                                context,
+                              )!.homeFastingLayoutPauseFastingButton
+                            : AppLocalizations.of(
+                                context,
+                              )!.homeFastingLayoutResumeFastingButton,
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyMedium?.copyWith(color: Colors.white),
+                      ),
+                    ),
                   ),
-                  Text(
-                    AppLocalizations.of(
-                      context,
-                    )!.homeFastingLayoutTimeSinceLastFasting,
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
-                  Text('0m', style: Theme.of(context).textTheme.displayLarge),
-                  const SizedBox(height: 24),
-                  IconButton(
-                    onPressed: () => null,
-                    icon: Icon(Icons.info, size: 64),
+                  SizedBox(
+                    width: double.infinity,
+                    child: FilledButton(
+                      onPressed: () => showCancelFastingDialog(),
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStateColor.resolveWith(
+                          (states) => Colors.red,
+                        ),
+                      ),
+                      child: Text(
+                        AppLocalizations.of(
+                          context,
+                        )!.homeFastingLayoutCancelFastingButton,
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyMedium?.copyWith(color: Colors.white),
+                      ),
+                    ),
                   ),
                 ],
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: FilledButton(
-                onPressed: () => null,
-                child: Text(
-                  AppLocalizations.of(
-                    context,
-                  )!.homeFastingLayoutStartFastingButton,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(color: Colors.white),
-                ),
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: FilledButton(
-                onPressed: () => null,
-                style: ButtonStyle(
-                  backgroundColor: WidgetStateColor.resolveWith(
-                    (states) => Colors.indigo,
-                  ),
-                ),
-                child: Text(
-                  AppLocalizations.of(
-                    context,
-                  )!.homeFastingLayoutPauseFastingButton,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(color: Colors.white),
-                ),
               ),
             ),
             _MountCurrentFastingRoutine(),
@@ -139,6 +191,70 @@ class _FastingComponentState extends State<FastingComponent> {
           ],
         ),
       ),
+    );
+  }
+
+  void showCancelFastingDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return SimpleDialog(
+          contentPadding: EdgeInsets.symmetric(
+            vertical: 24.0,
+            horizontal: 16.0,
+          ),
+          children: [
+            Padding(
+              padding: EdgeInsets.only(bottom: 8.0),
+              child: Text(
+                AppLocalizations.of(context)!.homeFastingCancelFastingBody,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            ),
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      controller.cancelFasting();
+                    });
+
+                    Navigator.pop(context);
+                  },
+                  child: Text(AppLocalizations.of(context)!.yesTitle),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(AppLocalizations.of(context)!.noTitle),
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class _MountNotInRoutineLayout extends StatelessWidget {
+  const _MountNotInRoutineLayout({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      spacing: 12,
+      children: [
+        Icon(Icons.food_bank, size: 72),
+        Text(
+          AppLocalizations.of(context)!.homeFastingLayoutNotFasting,
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+        Text(
+          AppLocalizations.of(context)!.homeFastingLayoutTimeSinceLastFasting,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+        Text('0m', style: Theme.of(context).textTheme.displayLarge),
+      ],
     );
   }
 }

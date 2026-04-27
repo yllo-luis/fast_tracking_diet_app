@@ -315,7 +315,6 @@ class _SelectPlanCarrousel extends StatelessWidget {
   final Function(FastingRoutineModel removed)? onRemove;
 
   const _SelectPlanCarrousel({
-    super.key,
     required this.routinesList,
     required this.currentSelection,
     required this.onSelected,
@@ -395,7 +394,7 @@ class _SelectPlanCarrousel extends StatelessWidget {
 }
 
 class _NoCustomPlansWidget extends StatelessWidget {
-  const _NoCustomPlansWidget({super.key});
+  const _NoCustomPlansWidget();
 
   @override
   Widget build(BuildContext context) {

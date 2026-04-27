@@ -3,7 +3,6 @@ import 'package:fast_tracking_diet_app/presentation/modules/home/widgets/get_lay
 import 'package:fast_tracking_diet_app/presentation/presentation_utils/presentation_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../utils/enums/home_items.dart';
 import '../../../../utils/enums/home_items_utils.dart';

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fast_tracking_diet_app/app/auth/firebase_auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_modular/flutter_modular.dart';

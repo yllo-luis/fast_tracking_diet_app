@@ -237,7 +237,7 @@ class _FastingComponentState extends State<FastingComponent> {
 }
 
 class _MountNotInRoutineLayout extends StatelessWidget {
-  const _MountNotInRoutineLayout({super.key});
+  const _MountNotInRoutineLayout();
 
   @override
   Widget build(BuildContext context) {
@@ -260,7 +260,7 @@ class _MountNotInRoutineLayout extends StatelessWidget {
 }
 
 class _MountCurrentFastingRoutine extends StatelessWidget {
-  const _MountCurrentFastingRoutine({super.key});
+  const _MountCurrentFastingRoutine();
 
   @override
   Widget build(BuildContext context) {
@@ -324,7 +324,7 @@ class _MountCurrentFastingRoutine extends StatelessWidget {
 }
 
 class _MountTipsSection extends StatelessWidget {
-  const _MountTipsSection({super.key});
+  const _MountTipsSection();
 
   List<HomeFastingLayoutTipsEnum> get tipsValue =>
       HomeFastingLayoutTipsEnum.values;

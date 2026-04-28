@@ -9,15 +9,15 @@ Este projeto é uma aplicação mobile desenvolvida em **Flutter**, criada como 
 O projeto foi estruturado seguindo os princípios de **Clean Architecture**, visando a separação de responsabilidades e a facilidade de testes.
 
 ### Principais escolhas:
-**Gerenciamento de Dependências:** `flutter_modular` foi utilizado para modularização e injeção de dependências, permitindo um desacoplamento eficiente.
-**Gerenciamento de Estado:** Combinação de `flutter_bloc` para fluxos complexos e ferramentas nativas do Flutter para estados mais simples.
-**Comunicação:** `dio` com `pretty_dio_logger` para requisições HTTP e debug transparente.
-**Persistência:** `sqflite` para dados locais e `shared_preferences` para configurações simples.
-**Qualidade:** Implementação de testes unitários com `mockito` para validar a lógica de negócio.
+* **Gerenciamento de Dependências:** `flutter_modular` foi utilizado para modularização e injeção de dependências, permitindo um desacoplamento eficiente.
+* **Gerenciamento de Estado:** Ferramentas nativas do Flutter para gerenciar estados da aplicação.
+* **Comunicação:** `dio` com `pretty_dio_logger` para requisições HTTP e debug transparente.
+* **Persistência:** `sqflite` para dados locais e `shared_preferences` para configurações simples.
+* **Qualidade:** Implementação de testes unitários com `mockito` para validar a lógica de negócio.
 
 ### Trade-offs & Considerações:
 * **Simplicidade vs. Escalabilidade:** Optei por um equilíbrio entre a Clean Architecture e o tempo de desenvolvimento. Embora a estrutura atual suporte bem a aplicação, para um projeto de longa escala, a migração total para um padrão de estado único (ex: BLoC puro em todos os módulos) seria o próximo passo ideal.
-**Cobertura de Testes:** O projeto possui uma base sólida de **testes unitários**. Testes de widget e de integração foram priorizados para uma fase posterior de evolução do produto.
+* **Cobertura de Testes:** O projeto possui uma base sólida de **testes unitários**. Testes de widget e de integração foram priorizados para uma fase posterior de evolução do produto.
 
 ---
 

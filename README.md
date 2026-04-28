@@ -1,30 +1,34 @@
-# Fast Tracker App
+# Fast Tracker App 🚀
 
-Projeto Flutter criado para completar um desafio de programação rápido com o prazo de 3 a 4 dias corridos.
+Este projeto é uma aplicação mobile desenvolvida em **Flutter**, criada como resposta a um desafio técnico com prazo de entrega acelerado (3 a 4 dias). O foco principal foi a implementação de uma arquitetura robusta, código limpo e manutenibilidade.
 
-Em relação à arquitetura e injeção de dependências, foi implementado seguindo os preceitos da clean architecture com o uso de ferramentas nativas do Flutter para gerenciamento de estado, juntamente com a biblioteca flutter_bloc.
+---
 
-Para a injeção de dependências, foi utilizada a biblioteca flutter_modular em conjunto com a biblioteca DIO para requisições HTTP/HTTPS e, por último, a biblioteca Mockito para criar classes falsas voltadas para testes unitários.
+## 🛠 Arquitetura e Decisões Técnicas
 
-## Como executar o projeto?
+O projeto foi estruturado seguindo os princípios de **Clean Architecture**, visando a separação de responsabilidades e a facilidade de testes.
 
-Basta apenas rodar o comando abaixo com um celular plugado ao computador ou com um emulador de dispositivos mobile aberto.
+### Principais escolhas:
+**Gerenciamento de Dependências:** `flutter_modular` foi utilizado para modularização e injeção de dependências, permitindo um desacoplamento eficiente.
+**Gerenciamento de Estado:** Combinação de `flutter_bloc` para fluxos complexos e ferramentas nativas do Flutter para estados mais simples.
+**Comunicação:** `dio` com `pretty_dio_logger` para requisições HTTP e debug transparente.
+**Persistência:** `sqflite` para dados locais e `shared_preferences` para configurações simples.
+**Qualidade:** Implementação de testes unitários com `mockito` para validar a lógica de negócio.
 
-```flutter run```
+### Trade-offs & Considerações:
+* **Simplicidade vs. Escalabilidade:** Optei por um equilíbrio entre a Clean Architecture e o tempo de desenvolvimento. Embora a estrutura atual suporte bem a aplicação, para um projeto de longa escala, a migração total para um padrão de estado único (ex: BLoC puro em todos os módulos) seria o próximo passo ideal.
+**Cobertura de Testes:** O projeto possui uma base sólida de **testes unitários**. Testes de widget e de integração foram priorizados para uma fase posterior de evolução do produto.
 
-Serão fornecidas também um arquivo de instalação APK para facilitar a avaliação da aplicação sem a necessidade de ter um ambiente de desenvolvimento preparado para roda-lo.
+---
 
-## Como executar os testes unitarios?
+## 🚀 Como Executar
 
-Primeiramente, é necessário gerar os mocks necessários para algumas dependências utilizadas pelo
-aplicativo.
+### Pré-requisitos
+* Flutter SDK instalado e configurado.
+* Dispositivo físico conectado ou emulador/simulador aberto.
+* OU Dispositivo físico e arquivo de release da aplicação.
 
-O seguinte comando deve ser executado:
+### Execução
+Para rodar a aplicação:
 
-```flutter pub run build_runner build --delete-conflicting-outputs```
-
-Por fim, basta apenas executar o comando:
-
-```flutter test```
-
-Dessa forma, os testes implementados serão executados.
+flutter run

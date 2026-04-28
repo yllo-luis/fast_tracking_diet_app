@@ -9,4 +9,6 @@ class LoginStore {
 
   TextEditingController userNameRegister = TextEditingController();
   TextEditingController passwordRegister = TextEditingController();
+
+  TextEditingController kcalTarget = TextEditingController();
 }

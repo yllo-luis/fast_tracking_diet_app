@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../../app/l10n/app_localizations.dart';
+import '../../../../utils/enums/password_strength_custom_enum.dart';
 import '../../../presentation_utils/presentation_constants.dart';
 import '../../../presentation_utils/widgets/password_checker_widget.dart';
 import '../controller/login_controller.dart';
@@ -79,10 +80,32 @@ class _RegisterViewState extends State<RegisterView> {
                           return PasswordCheckerWidget(
                             passwordController:
                                 controller.getLoginStoreInst.passwordRegister,
+                            minimumStrengthRequired:
+                                PasswordStrengthCustomEnum.weak,
                             shouldHidePassword: value,
                             onShowPassword: () =>
                                 shouldHidePassword.value = !value,
                           );
+                        },
+                      ),
+                      TextFormField(
+                        controller:
+                            controller.getLoginStoreInst.kcalTarget,
+                        maxLength: 6,
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          hintText: AppLocalizations.of(
+                            context,
+                          )!.registerKcalFieldHintText,
+                        ),
+                        validator: (value) {
+                          if (value == null || int.parse(value) < 100) {
+                            return AppLocalizations.of(
+                              context,
+                            )!.errorValueTitle;
+                          }
+
+                          return null;
                         },
                       ),
                     ],

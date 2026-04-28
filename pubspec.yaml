@@ -16,7 +16,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_localizations: # Add this
+  flutter_localizations:
     sdk: flutter
 
   # Layout packages
@@ -27,6 +27,7 @@ dependencies:
   intl: ^0.20.2
   password_strength_checker: ^1.3.2
   slide_countdown: ^2.0.2
+  syncfusion_flutter_charts: ^33.2.3
 
   # Dependency and state management packages
   flutter_modular: ^6.4.1
@@ -49,6 +50,8 @@ dependencies:
   path: ^1.9.1
   email_validator: ^3.0.0
   share_plus: ^13.1.0
+  timezone: ^0.11.0
+  mask_text_input_formatter: ^2.9.0
 
   # Firebase related packages.
   firebase_core: ^4.7.0
@@ -56,6 +59,7 @@ dependencies:
 
   # Background service packages.
   flutter_background: ^1.3.1
+  flutter_local_notifications: ^21.0.0
 
 dev_dependencies:
   flutter_test:

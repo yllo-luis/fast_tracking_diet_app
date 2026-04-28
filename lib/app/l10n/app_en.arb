@@ -21,6 +21,7 @@
   "registerSubtitle": "Sign up to achieve your health goals with the support you need.",
   "registerButtonTitle": "Sign up",
   "registerButtonGeneratePasswordTitle": "Generate Password",
+  "registerKcalFieldHintText": "Enter your calorie goal here.",
 
   "registerPasswordStrengthWeak": "Weak",
   "registerPasswordStrengthMedium": "Medium",
@@ -28,8 +29,11 @@
 
   "yesTitle": "Yes",
   "noTitle": "No",
+  "cancelTitle": "Cancel",
+  "saveTitle": "Update",
 
   "homeBottomNavigationItemFasting": "Fasting",
+  "homeBottomNavigationItemCalculator": "Calculator",
   "homeBottomNavigationItemDiary": "Diary",
   "homeBottomNavigationItemProfile": "Profile",
 
@@ -42,6 +46,8 @@
   "homeFastingLayoutFastingDateStart": "Start",
   "homeFastingLayoutFastingDateEnd": "End",
   "homeFastingLayoutTipsTitle": "Tips",
+  "homeFastingLayoutTimeRemainingTitle": "Time remaining:",
+  "homeFastingLayoutTimeElapsedTitle": "Time elapsed since the start: ",
 
   "homeFastingCancelFastingBody": "Are you sure you want to stop intermittent fasting?",
 
@@ -78,5 +84,63 @@
 
   "homeFastingRoutineCustomFastingHintFastingTime": "Fasting time",
   "homeFastingRoutineCustomFastingHintRestTime": "Rest period",
-  "homeFastingRoutineCustomCreateButton": "Create a routine"
+  "homeFastingRoutineCustomCreateButton": "Create a routine",
+
+  "homeFastingNotificationStartTitle": "Fasting Started",
+  "homeFastingNotificationStartBody": "Your fasting timer has started. Let's do this!",
+  "homeFastingNotificationPausedTitle": "Fasting Paused",
+  "homeFastingNotificationPausedBody": "Your fast is paused. You can resume it at any time.",
+  "homeFastingNotificationCancelledTitle": "Fasting Cancelled",
+  "homeFastingNotificationCancelledBody": "Fasting cancelled. Don't worry, you can start a new cycle whenever you're ready.",
+  "homeFastingNotificationCompletedTitle": "Fast complete!",
+  "homeFastingNotificationCompletedBody": "Well done on completing your fast! You're one step closer to your goals. Keep it up!",
+
+  "homeFastingDenyChangeOnPageTitle": "Let's focus on fasting!",
+  "homeFastingDenyChangeOnPageBody": "Focus on your fast! Access to the rest of the app will be unlocked upon completion.",
+
+  "homeFastingHistoryNoHistoryText1": "The first step toward a new routine begins with your very first fast. Intermittent fasting isn’t just about the time you spend without eating; it’s about giving your body the space it needs to recover, renew its energy, and bring more clarity to your daily life.",
+  "homeFastingHistoryNoHistoryText2": "Why not give it a try today? Choose a window that fits your lifestyle and experience for yourself how easy it is to get started.",
+  "homeFastingHistoryStartFastingButton": "Start my first fast",
+  "homeFastingHistoryGraphTitle": "Fasting History",
+  "homeFastingHistoryDataTitle": "Fasting time: {fastingTime} hours",
+  "@homeFastingHistoryDataTitle": {
+    "description": "Texto para compartilhamento do tempo de jejum feito",
+    "placeholders": {
+      "fastingTime": {
+        "type": "String",
+        "example": "12 horas"
+      }
+    }
+  },
+
+  "homeFastingKcalRegistryMessage": "Your day begins now. Log what you've consumed and take control of your nutrition.",
+  "homeFastingKcalRegistryButton": "Track meals",
+
+  "homeFastingKcalRegistryNoRegistryMessage": "Logging is the first step toward balance. Let us know what you've had to eat today!",
+
+  "kcalTypeBreakfastLabel": "Breakfast",
+  "kcalTypeLunchLabel": "Lunch",
+  "kcalTypeDinnerLabel": "Dinner",
+  "kcalTypeOtherLabel": "Other",
+
+  "homeFastingRegistryTip01": "Don't forget to log cooking oils, dressings, and sauces. They add up quickly.",
+  "homeFastingRegistryTip02": "If you're in a rush, take a picture of your plate to log the details later.",
+  "homeFastingRegistryTip03": "Don't aim for absolute perfection; focus on the consistency of your weekly average.",
+
+  "homeFastingRegistryName": "Meal name",
+  "homeFastingRegistryQuantity": "Meal calorie count",
+  "homeFastingRegistryDate": "Meal date",
+  "homeFastingRegistryType": "Meal type",
+
+  "homeFastingRegistryButton": "Log meal",
+
+  "homeProfileTitle": "Profile",
+  "homeProfileUsername": "Username",
+  "homeProfileFastingsDoneSoFar": "Fasts completed so far",
+  "homeProfileKcalMax": "Calorie goal",
+  "homeProfileUpdateKcalMaxTitle": "Update calorie goal",
+  "homeProfileUpdateNewKcalTitle": "New goal (kcal)",
+
+  "homeFastingNoKcalDefinedWarning": "Your calorie goal must be set to access this feature.",
+  "homeFastingNoKcalDefinedWarningButton": "Set goal"
 }

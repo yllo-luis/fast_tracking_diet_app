@@ -2,6 +2,7 @@ import 'package:fast_tracking_diet_app/app/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:slide_countdown/slide_countdown.dart';
 
 import '../../../../../domain/entity/fasting_routine_model.dart';
@@ -29,6 +30,7 @@ class _FastingComponentState extends State<FastingComponent> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       controller.getFastingRoutines();
+      controller.getLoggedUser();
     });
     super.initState();
   }
@@ -51,7 +53,8 @@ class _FastingComponentState extends State<FastingComponent> {
                   duration: PresentationConstants.animationDuration,
                   child: controller.homeStore.isDoingFasting
                       ? IconButton(
-                          onPressed: () => controller.shareFasting(context: context),
+                          onPressed: () =>
+                              controller.shareFasting(context: context),
                           icon: Icon(Icons.share),
                         )
                       : SizedBox.shrink(),
@@ -93,7 +96,9 @@ class _FastingComponentState extends State<FastingComponent> {
                         children: [
                           Icon(Icons.no_food, size: 72),
                           Text(
-                            'Tempo restante: ',
+                            AppLocalizations.of(
+                              context,
+                            )!.homeFastingLayoutTimeRemainingTitle,
                             style: Theme.of(context).textTheme.bodyMedium
                                 ?.copyWith(color: Colors.black),
                           ),
@@ -107,6 +112,42 @@ class _FastingComponentState extends State<FastingComponent> {
                               ),
                               color: Colors.deepPurple,
                             ),
+                            onDone: () {
+                              controller.onFinishedFasting();
+                              controller.showDoneNotification(context: context);
+                            },
+                            onChanged: (value) {
+                              if (controller.homeStore.isDoingFasting) {
+                                // value is the remaining duration
+                                final total = controller
+                                    .homeStore
+                                    .currentFastingModel
+                                    .value
+                                    .fastingPeriod;
+
+                                // Elapsed = Total - Remaining
+                                controller
+                                    .homeStore
+                                    .timeElapsedFasting
+                                    .value = Duration(
+                                  milliseconds: (total - value).inMilliseconds,
+                                );
+                              }
+                            },
+                          ),
+                          Text(
+                            AppLocalizations.of(
+                              context,
+                            )!.homeFastingLayoutTimeElapsedTitle,
+                          ),
+                          ValueListenableBuilder(
+                            valueListenable:
+                                controller.homeStore.timeElapsedFasting,
+                            builder: (context, value, child) {
+                              return Text(
+                                '${controller.homeStore.timeElapsedFasting.value.inMinutes}m',
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -118,9 +159,15 @@ class _FastingComponentState extends State<FastingComponent> {
               replacement: SizedBox(
                 width: double.infinity,
                 child: FilledButton(
-                  onPressed: () => setState(() {
-                    controller.startFasting();
-                  }),
+                  onPressed: () async {
+                    await controller.startFasting().whenComplete(() {
+                      if (context.mounted) {
+                        setState(() {});
+
+                        controller.showStartNotification(context: context);
+                      }
+                    });
+                  },
                   child: Text(
                     AppLocalizations.of(
                       context,
@@ -139,9 +186,13 @@ class _FastingComponentState extends State<FastingComponent> {
                     child: FilledButton(
                       onPressed: () {
                         setState(() {
-                          controller.fastingStreamDuration?.isPaused == false
-                              ? controller.pauseFasting()
-                              : controller.resumeFasting();
+                          if (controller.fastingStreamDuration?.isPaused ==
+                              false) {
+                            controller.pauseFasting();
+                            controller.showPausedNotification(context: context);
+                          } else {
+                            controller.resumeFasting();
+                          }
                         });
                       },
                       style: ButtonStyle(
@@ -185,7 +236,11 @@ class _FastingComponentState extends State<FastingComponent> {
                 ],
               ),
             ),
-            _MountCurrentFastingRoutine(),
+            _MountCurrentFastingRoutine(
+              isFasting: controller.homeStore.isDoingFasting,
+              fastingRoutineModel:
+                  controller.homeStore.currentFastingModel.value,
+            ),
             const SizedBox(),
             const _MountTipsSection(),
           ],
@@ -219,6 +274,8 @@ class _FastingComponentState extends State<FastingComponent> {
                       controller.cancelFasting();
                     });
 
+                    controller.showCancelledNotification(context: context);
+
                     Navigator.pop(context);
                   },
                   child: Text(AppLocalizations.of(context)!.yesTitle),
@@ -249,76 +306,86 @@ class _MountNotInRoutineLayout extends StatelessWidget {
           AppLocalizations.of(context)!.homeFastingLayoutNotFasting,
           style: Theme.of(context).textTheme.bodyLarge,
         ),
-        Text(
-          AppLocalizations.of(context)!.homeFastingLayoutTimeSinceLastFasting,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
-        Text('0m', style: Theme.of(context).textTheme.displayLarge),
       ],
     );
   }
 }
 
 class _MountCurrentFastingRoutine extends StatelessWidget {
-  const _MountCurrentFastingRoutine();
+  final bool isFasting;
+  final FastingRoutineModel fastingRoutineModel;
+
+  const _MountCurrentFastingRoutine({
+    required this.isFasting,
+    required this.fastingRoutineModel,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: .spaceBetween,
-      children: [
-        RichText(
-          text: TextSpan(
-            style: Theme.of(
-              context,
-            ).textTheme.bodyMedium?.copyWith(color: Colors.black54),
-            children: [
-              TextSpan(
-                text:
-                    '${AppLocalizations.of(context)!.homeFastingLayoutFastingDateStart} \n',
-              ),
-              TextSpan(
-                text: 'Hoje \n',
-                style: Theme.of(
-                  context,
-                ).textTheme.bodySmall?.copyWith(color: Colors.black87),
-              ),
-              TextSpan(
-                text: '19:40',
-                style: Theme.of(
-                  context,
-                ).textTheme.bodySmall?.copyWith(color: Colors.black87),
-              ),
-            ],
-          ),
-        ),
-        RichText(
-          textAlign: TextAlign.end,
-          text: TextSpan(
-            style: Theme.of(
-              context,
-            ).textTheme.bodyMedium?.copyWith(color: Colors.black54),
-            children: [
-              TextSpan(
-                text:
-                    '${AppLocalizations.of(context)!.homeFastingLayoutFastingDateEnd} \n',
-              ),
-              TextSpan(
-                text: 'Amanhã \n',
-                style: Theme.of(
-                  context,
-                ).textTheme.bodySmall?.copyWith(color: Colors.black87),
-              ),
-              TextSpan(
-                text: '11:40',
-                style: Theme.of(
-                  context,
-                ).textTheme.bodySmall?.copyWith(color: Colors.black87),
-              ),
-            ],
-          ),
-        ),
-      ],
+    return AnimatedSwitcher(
+      duration: PresentationConstants.animationDuration,
+      child: isFasting
+          ? Row(
+              mainAxisAlignment: .spaceBetween,
+              children: [
+                RichText(
+                  text: TextSpan(
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyMedium?.copyWith(color: Colors.black54),
+                    children: [
+                      TextSpan(
+                        text:
+                            '${AppLocalizations.of(context)!.homeFastingLayoutFastingDateStart} \n',
+                      ),
+                      TextSpan(
+                        text:
+                            '${DateFormat('EEEE', Localizations.localeOf(context).languageCode).format(DateTime.now())}\n',
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodySmall?.copyWith(color: Colors.black87),
+                      ),
+                      TextSpan(
+                        text: DateFormat('HH:mm').format(DateTime.now()),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodySmall?.copyWith(color: Colors.black87),
+                      ),
+                    ],
+                  ),
+                ),
+                RichText(
+                  textAlign: TextAlign.end,
+                  text: TextSpan(
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyMedium?.copyWith(color: Colors.black54),
+                    children: [
+                      TextSpan(
+                        text:
+                            '${AppLocalizations.of(context)!.homeFastingLayoutFastingDateEnd} \n',
+                      ),
+                      TextSpan(
+                        text:
+                            '${DateFormat('EEEE', Localizations.localeOf(context).languageCode).format(DateTime.now().add(fastingRoutineModel.fastingPeriod))}\n',
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodySmall?.copyWith(color: Colors.black87),
+                      ),
+                      TextSpan(
+                        text: DateFormat('HH:mm').format(
+                          DateTime.now().add(fastingRoutineModel.fastingPeriod),
+                        ),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodySmall?.copyWith(color: Colors.black87),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
+          : const SizedBox.shrink(),
     );
   }
 }

@@ -22,6 +22,8 @@ class HomeItemUtils {
     switch (homeItem) {
       case HomeItems.fasting:
         return Icon(Icons.home);
+      case HomeItems.kCalCalculator:
+        return Icon(Icons.calculate);
       case HomeItems.diary:
         return Icon(Icons.book);
       case HomeItems.userProfile:
@@ -33,6 +35,8 @@ class HomeItemUtils {
     switch (homeItem) {
       case HomeItems.fasting:
         return AppLocalizations.of(context)!.homeBottomNavigationItemFasting;
+      case HomeItems.kCalCalculator:
+        return AppLocalizations.of(context)!.homeBottomNavigationItemCalculator;
       case HomeItems.diary:
         return AppLocalizations.of(context)!.homeBottomNavigationItemDiary;
       case HomeItems.userProfile:

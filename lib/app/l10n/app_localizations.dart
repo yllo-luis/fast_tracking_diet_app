@@ -206,6 +206,12 @@ abstract class AppLocalizations {
   /// **'Generate Password'**
   String get registerButtonGeneratePasswordTitle;
 
+  /// No description provided for @registerKcalFieldHintText.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your calorie goal here.'**
+  String get registerKcalFieldHintText;
+
   /// No description provided for @registerPasswordStrengthWeak.
   ///
   /// In en, this message translates to:
@@ -236,11 +242,29 @@ abstract class AppLocalizations {
   /// **'No'**
   String get noTitle;
 
+  /// No description provided for @cancelTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancelTitle;
+
+  /// No description provided for @saveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get saveTitle;
+
   /// No description provided for @homeBottomNavigationItemFasting.
   ///
   /// In en, this message translates to:
   /// **'Fasting'**
   String get homeBottomNavigationItemFasting;
+
+  /// No description provided for @homeBottomNavigationItemCalculator.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculator'**
+  String get homeBottomNavigationItemCalculator;
 
   /// No description provided for @homeBottomNavigationItemDiary.
   ///
@@ -307,6 +331,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tips'**
   String get homeFastingLayoutTipsTitle;
+
+  /// No description provided for @homeFastingLayoutTimeRemainingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Time remaining:'**
+  String get homeFastingLayoutTimeRemainingTitle;
+
+  /// No description provided for @homeFastingLayoutTimeElapsedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Time elapsed since the start: '**
+  String get homeFastingLayoutTimeElapsedTitle;
 
   /// No description provided for @homeFastingCancelFastingBody.
   ///
@@ -439,6 +475,234 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Create a routine'**
   String get homeFastingRoutineCustomCreateButton;
+
+  /// No description provided for @homeFastingNotificationStartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting Started'**
+  String get homeFastingNotificationStartTitle;
+
+  /// No description provided for @homeFastingNotificationStartBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your fasting timer has started. Let\'s do this!'**
+  String get homeFastingNotificationStartBody;
+
+  /// No description provided for @homeFastingNotificationPausedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting Paused'**
+  String get homeFastingNotificationPausedTitle;
+
+  /// No description provided for @homeFastingNotificationPausedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your fast is paused. You can resume it at any time.'**
+  String get homeFastingNotificationPausedBody;
+
+  /// No description provided for @homeFastingNotificationCancelledTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting Cancelled'**
+  String get homeFastingNotificationCancelledTitle;
+
+  /// No description provided for @homeFastingNotificationCancelledBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting cancelled. Don\'t worry, you can start a new cycle whenever you\'re ready.'**
+  String get homeFastingNotificationCancelledBody;
+
+  /// No description provided for @homeFastingNotificationCompletedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fast complete!'**
+  String get homeFastingNotificationCompletedTitle;
+
+  /// No description provided for @homeFastingNotificationCompletedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Well done on completing your fast! You\'re one step closer to your goals. Keep it up!'**
+  String get homeFastingNotificationCompletedBody;
+
+  /// No description provided for @homeFastingDenyChangeOnPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s focus on fasting!'**
+  String get homeFastingDenyChangeOnPageTitle;
+
+  /// No description provided for @homeFastingDenyChangeOnPageBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus on your fast! Access to the rest of the app will be unlocked upon completion.'**
+  String get homeFastingDenyChangeOnPageBody;
+
+  /// No description provided for @homeFastingHistoryNoHistoryText1.
+  ///
+  /// In en, this message translates to:
+  /// **'The first step toward a new routine begins with your very first fast. Intermittent fasting isn’t just about the time you spend without eating; it’s about giving your body the space it needs to recover, renew its energy, and bring more clarity to your daily life.'**
+  String get homeFastingHistoryNoHistoryText1;
+
+  /// No description provided for @homeFastingHistoryNoHistoryText2.
+  ///
+  /// In en, this message translates to:
+  /// **'Why not give it a try today? Choose a window that fits your lifestyle and experience for yourself how easy it is to get started.'**
+  String get homeFastingHistoryNoHistoryText2;
+
+  /// No description provided for @homeFastingHistoryStartFastingButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Start my first fast'**
+  String get homeFastingHistoryStartFastingButton;
+
+  /// No description provided for @homeFastingHistoryGraphTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting History'**
+  String get homeFastingHistoryGraphTitle;
+
+  /// Texto para compartilhamento do tempo de jejum feito
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting time: {fastingTime} hours'**
+  String homeFastingHistoryDataTitle(String fastingTime);
+
+  /// No description provided for @homeFastingKcalRegistryMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your day begins now. Log what you\'ve consumed and take control of your nutrition.'**
+  String get homeFastingKcalRegistryMessage;
+
+  /// No description provided for @homeFastingKcalRegistryButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Track meals'**
+  String get homeFastingKcalRegistryButton;
+
+  /// No description provided for @homeFastingKcalRegistryNoRegistryMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Logging is the first step toward balance. Let us know what you\'ve had to eat today!'**
+  String get homeFastingKcalRegistryNoRegistryMessage;
+
+  /// No description provided for @kcalTypeBreakfastLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Breakfast'**
+  String get kcalTypeBreakfastLabel;
+
+  /// No description provided for @kcalTypeLunchLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Lunch'**
+  String get kcalTypeLunchLabel;
+
+  /// No description provided for @kcalTypeDinnerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Dinner'**
+  String get kcalTypeDinnerLabel;
+
+  /// No description provided for @kcalTypeOtherLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get kcalTypeOtherLabel;
+
+  /// No description provided for @homeFastingRegistryTip01.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t forget to log cooking oils, dressings, and sauces. They add up quickly.'**
+  String get homeFastingRegistryTip01;
+
+  /// No description provided for @homeFastingRegistryTip02.
+  ///
+  /// In en, this message translates to:
+  /// **'If you\'re in a rush, take a picture of your plate to log the details later.'**
+  String get homeFastingRegistryTip02;
+
+  /// No description provided for @homeFastingRegistryTip03.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t aim for absolute perfection; focus on the consistency of your weekly average.'**
+  String get homeFastingRegistryTip03;
+
+  /// No description provided for @homeFastingRegistryName.
+  ///
+  /// In en, this message translates to:
+  /// **'Meal name'**
+  String get homeFastingRegistryName;
+
+  /// No description provided for @homeFastingRegistryQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Meal calorie count'**
+  String get homeFastingRegistryQuantity;
+
+  /// No description provided for @homeFastingRegistryDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Meal date'**
+  String get homeFastingRegistryDate;
+
+  /// No description provided for @homeFastingRegistryType.
+  ///
+  /// In en, this message translates to:
+  /// **'Meal type'**
+  String get homeFastingRegistryType;
+
+  /// No description provided for @homeFastingRegistryButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Log meal'**
+  String get homeFastingRegistryButton;
+
+  /// No description provided for @homeProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get homeProfileTitle;
+
+  /// No description provided for @homeProfileUsername.
+  ///
+  /// In en, this message translates to:
+  /// **'Username'**
+  String get homeProfileUsername;
+
+  /// No description provided for @homeProfileFastingsDoneSoFar.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasts completed so far'**
+  String get homeProfileFastingsDoneSoFar;
+
+  /// No description provided for @homeProfileKcalMax.
+  ///
+  /// In en, this message translates to:
+  /// **'Calorie goal'**
+  String get homeProfileKcalMax;
+
+  /// No description provided for @homeProfileUpdateKcalMaxTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update calorie goal'**
+  String get homeProfileUpdateKcalMaxTitle;
+
+  /// No description provided for @homeProfileUpdateNewKcalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New goal (kcal)'**
+  String get homeProfileUpdateNewKcalTitle;
+
+  /// No description provided for @homeFastingNoKcalDefinedWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Your calorie goal must be set to access this feature.'**
+  String get homeFastingNoKcalDefinedWarning;
+
+  /// No description provided for @homeFastingNoKcalDefinedWarningButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Set goal'**
+  String get homeFastingNoKcalDefinedWarningButton;
 }
 
 class _AppLocalizationsDelegate

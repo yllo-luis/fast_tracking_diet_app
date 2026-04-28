@@ -1,7 +1,6 @@
 {
   "splashPageBackgroundPermissionDeniedTitle": "É necessário ativação da permissão a execução do aplicativo em segundo plano para garantir o funcionamento completo do app.",
   "splashPageEnableBackgroundPermissionButtonTitle": "Ativar permissão",
-
   "loginTitle": "Fazer login",
   "loginSubTitle": "Realize login para aproveitar todas as funções do Fast Tracking!",
   "loginEmailFieldHintText": "Digite seu email aqui.",
@@ -9,30 +8,29 @@
   "loginInvalidEmailText": "Por favor digite um email valido",
   "loginInvalidPasswordText": "Por favor digite uma senha valida",
   "loginRegisterTitle": "Não possui conta? Registre aqui!",
-
   "errorTitle": "Ocorreu um erro!",
   "errorSubTitle": "Ocorreu um erro! Verifique sua conexão com a internet.",
   "errorSubTitle2": "Ocorreu um erro! Tente novamente mais tarde.",
   "errorValueTitle": "Por favor digite um valor valido.",
-
   "loginErrorSubtitle": "Verifique seu email e senha.",
-
   "registerTitle": "Comece sua jornada de saúde hoje",
   "registerSubtitle": "Cadastre-se para alcançar seus objetivos de saúde com o suporte que você precisa.",
   "registerButtonTitle": "Registrar",
   "registerButtonGeneratePasswordTitle": "Gerar senha",
-
+  "registerKcalFieldHintText": "Digite sua meta de calorias aqui.",
   "registerPasswordStrengthWeak": "Senha fraca",
   "registerPasswordStrengthMedium": "Senha mediana",
   "registerPasswordStrengthStrong": "Senha forte",
 
   "yesTitle": "Sim",
   "noTitle": "Não",
+  "cancelTitle": "Cancelar",
+  "saveTitle": "Salvar",
 
   "homeBottomNavigationItemFasting": "Jejum",
+  "homeBottomNavigationItemCalculator": "Calculadora",
   "homeBottomNavigationItemDiary": "Diario",
   "homeBottomNavigationItemProfile": "Perfil",
-
   "homeFastingLayoutNotFasting": "Fora de jejum",
   "homeFastingLayoutTimeSinceLastFasting": "Tempo desde o último jejum",
   "homeFastingLayoutStartFastingButton": "Iniciar jejum",
@@ -42,9 +40,9 @@
   "homeFastingLayoutFastingDateStart": "Início",
   "homeFastingLayoutFastingDateEnd": "Fim",
   "homeFastingLayoutTipsTitle": "Dicas",
-
+  "homeFastingLayoutTimeRemainingTitle": "Tempo restante:",
+  "homeFastingLayoutTimeElapsedTitle": "Tempo desde o ínicio: ",
   "homeFastingCancelFastingBody": "Tem certeza que deseja cancelar o jejum intermitente?",
-
   "homeFastingShareButtonText": "Veja estou utilizando o Fast Tracking App com o regime {programType} veja o app na loja!",
   "@homeFastingShareButtonText": {
     "description": "Texto para compartilhamento do progresso de jejum",
@@ -55,7 +53,6 @@
       }
     }
   },
-
   "homeFastingLayoutTipStartSlowlyTitle": "Comece devagar",
   "homeFastingLayoutTipStartSlowlyBody": "Não tente fazer jejuns longos de imediato. Comece com janelas menores, como o protocolo 12/12 (12 horas de jejum e 12 de alimentação), e aumente gradualmente conforme seu corpo se adaptar.",
   "homeFastingLayoutTipDrinkWaterTitle": "Mantenha-se hidratado",
@@ -64,19 +61,71 @@
   "homeFastingLayoutFoodQualityBody": "Quando chegar a hora de comer, foque em alimentos nutritivos. Priorize proteínas, gorduras saudáveis, fibras e vegetais para garantir que você esteja nutrindo seu corpo e mantendo a saciedade por mais tempo.",
   "homeFastingLayoutListenBodyTitle": "Ouça o seu corpo",
   "homeFastingLayoutListenBody": "O jejum não deve causar sofrimento extremo. Se sentir tonturas, fraqueza excessiva ou mal-estar, interrompa o jejum. É importante saber diferenciar a fome psicológica dos sinais de que seu corpo precisa de energia.",
-
   "homeFastingRoutineSelectTitle": "Selecione o programa de jejum",
   "homeFastingRoutineSelectCurrentPlan": "Plano atual",
   "homeFastingRoutineSelectQuickPlan": "Planos rápidos",
   "homeFastingRoutineSelectCustomPlan": "Planos customizados",
   "homeFastingRoutineSelectCustomPlanEmpty": "Salve um plano como modelo para ver aqui.",
-
   "homeFastingRoutineCustomFastingTipSchedule": "Escolha o seu horário: Não tente seguir um horário fixo se não funcionar para você. Comece com 14 ou 16 horas de jejum e ajuste o horário de comer conforme o seu dia, não o contrário",
   "homeFastingRoutineCustomFastingTipWater": "Capriche na hidratação: Sempre que sentir fome fora da hora, beba um copo de água, café ou chá sem açúcar. Isso ajuda a controlar a vontade de comer sem quebrar o jejum.",
   "homeFastingRoutineCustomFastingTipBreakfast": "A primeira refeição importa: Quando for comer, evite pães, massas ou doces logo de cara. Prefira ovos, carnes, saladas ou gorduras boas (como abacate). Isso evita o sono após o almoço e mantém a energia alta.",
   "homeFastingRoutineCustomFastingTipWork": "Use o jejum para trabalhar melhor: Se você precisa focar em uma tarefa difícil, aproveite o período de jejum. Muitas pessoas se sentem mais alertas e focadas sem a digestão pesada ocupando o corpo.",
-
   "homeFastingRoutineCustomFastingHintFastingTime": "Tempo de jejum",
   "homeFastingRoutineCustomFastingHintRestTime": "Tempo de descanso",
-  "homeFastingRoutineCustomCreateButton": "Criar rotina"
+  "homeFastingRoutineCustomCreateButton": "Criar rotina",
+  "homeFastingNotificationStartTitle": "Jejum iniciado",
+  "homeFastingNotificationStartBody": "Seu cronômetro de jejum começou. Vamos lá!",
+  "homeFastingNotificationPausedTitle": "Jejum pausado",
+  "homeFastingNotificationPausedBody": "Seu jejum foi pausado. Você pode retomá-lo a qualquer momento.",
+  "homeFastingNotificationCancelledTitle": "Jejum cancelado",
+  "homeFastingNotificationCancelledBody": "Jejum cancelado. Não desanime, você pode começar um novo ciclo quando estiver pronto.",
+  "homeFastingNotificationCompletedTitle": "Jejum concluído com sucesso!",
+  "homeFastingNotificationCompletedBody": "Parabéns por completar seu jejum! Você está um passo mais perto dos seus objetivos. Continue assim!",
+  "homeFastingDenyChangeOnPageTitle": "Foco no jejum!",
+  "homeFastingDenyChangeOnPageBody": "Foco no jejum! O acesso ao restante do aplicativo será desbloqueado ao terminar o seu ciclo.",
+  "homeFastingHistoryNoHistoryText1": "O primeiro passo para uma nova rotina começa com o seu primeiro jejum. O jejum intermitente não é apenas sobre o tempo que você passa sem comer, mas sobre dar ao seu corpo o espaço necessário para se recuperar, renovar as energias e ganhar mais clareza no seu dia a dia.\n\nQue tal experimentar hoje? Escolha um horário que faça sentido para o seu estilo de vida e sinta, na prática, como é simples começar.",
+  "homeFastingHistoryNoHistoryText2": "Que tal experimentar hoje? Escolha um horário que faça sentido para o seu estilo de vida e sinta, na prática, como é simples começar.",
+  "homeFastingHistoryStartFastingButton": "Iniciar meu primeiro jejum",
+  "homeFastingHistoryGraphTitle": "Histórico de jejum",
+  "homeFastingHistoryDataTitle": "Tempo de jejum: {fastingTime} horas",
+  "@homeFastingHistoryDataTitle": {
+    "description": "Texto para compartilhamento do tempo de jejum feito",
+    "placeholders": {
+      "fastingTime": {
+        "type": "String",
+        "example": "12 horas"
+      }
+    }
+  },
+
+  "homeFastingKcalRegistryMessage": "O seu dia começa agora. Registre o que você consumiu e tome as rédeas da sua nutrição.",
+  "homeFastingKcalRegistryButton": "Registrar refeições",
+
+  "homeFastingKcalRegistryNoRegistryMessage": "Registrar é o primeiro passo para o equilíbrio. Conte para a gente o que você já consumiu hoje!",
+
+  "kcalTypeBreakfastLabel": "Café da manhã",
+  "kcalTypeLunchLabel": "Almoço",
+  "kcalTypeDinnerLabel": "Jantar",
+  "kcalTypeOtherLabel": "Outro",
+
+  "homeFastingRegistryTip01": "Não esqueça de registrar óleos de preparo, temperos e molhos. Eles somam calorias importantes.",
+  "homeFastingRegistryTip02": "Se estiver corrido, tire uma foto do prato para registrar os detalhes com calma mais tarde.",
+  "homeFastingRegistryTip03": "Não busque a perfeição absoluta; foque na consistência da sua média semanal.",
+
+  "homeFastingRegistryName": "Nome da refeição",
+  "homeFastingRegistryQuantity": "Quantidade em calorias da refeição",
+  "homeFastingRegistryDate": "Data da refeição",
+  "homeFastingRegistryType": "Tipo da refeição",
+
+  "homeFastingRegistryButton": "Registrar refeição",
+
+  "homeProfileTitle": "Perfil",
+  "homeProfileUsername": "Nome de usuário",
+  "homeProfileFastingsDoneSoFar": "Jejuns feitos até o momento",
+  "homeProfileKcalMax": "Meta de calorias",
+  "homeProfileUpdateKcalMaxTitle": "Atualizar Meta de Calorias",
+  "homeProfileUpdateNewKcalTitle": "Nova meta (kcal)",
+
+  "homeFastingNoKcalDefinedWarning": "Sua meta de calorias precisa estar configurada para acessar esta funcionalidade.",
+  "homeFastingNoKcalDefinedWarningButton": "Configurar meta"
 }

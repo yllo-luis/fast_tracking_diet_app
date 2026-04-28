@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-abstract class SharedPreferencesDatasourceContract {
+abstract class SharedPreferencesServiceContract {
   Future<void> getSharedPreferencesInstance();
 
   // Set data with shared preferences.
@@ -16,9 +16,9 @@ abstract class SharedPreferencesDatasourceContract {
   String? getStringData({required String key});
 }
 
-class SharedPreferencesDatasource
-    implements SharedPreferencesDatasourceContract {
-  SharedPreferencesDatasource();
+class SharedPreferencesService
+    implements SharedPreferencesServiceContract {
+  SharedPreferencesService();
 
   SharedPreferences? sharedPreferences;
 

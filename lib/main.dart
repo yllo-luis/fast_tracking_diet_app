@@ -19,7 +19,7 @@ void main() async {
     ModularApp(
       module: AppMainModule(),
       debugMode: kDebugMode,
-      child: const MyApp(),
+      child: MyApp(),
     ),
   );
 }
@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Demo',
-      theme: AppTheme.appThemeDarkMode,
+      theme: AppTheme.appThemeLightMode,
+      darkTheme: AppTheme.appThemeDarkMode,
       routerConfig: Modular.routerConfig,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

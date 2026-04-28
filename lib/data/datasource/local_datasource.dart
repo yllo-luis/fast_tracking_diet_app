@@ -4,6 +4,8 @@ import 'package:fast_tracking_diet_app/domain/entity/local_user_model.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../../domain/entity/local_kcal_routine_model.dart';
+
 abstract class LocalDatasourceContract {
   Future<void> onInitLocalDatasource();
   Future<void> createUser({required LocalUserModel localUser});
@@ -29,6 +31,17 @@ abstract class LocalDatasourceContract {
   Future<void> addFastingRoutine({required FastingRoutineModel fastingModel});
   Future<List<Map<String, Object?>>?> getFastingRoutines();
   Future<void> removeFastingRoute({required int fastingRoutineId});
+
+  Future<void> addKcalRoutine({
+    required LocalKcalRoutineModel localKcalRoutine,
+  });
+  Future<List<Map<String, Object?>>?> getKcalRoutinePerUserId({
+    required int userId,
+  });
+  Future<void> updateKcalRoutine({
+    required LocalKcalRoutineModel localKcalRoutine,
+  });
+  Future<void> removeKcalRoutine({required int kcalRoutineId});
 }
 
 class LocalDatasource implements LocalDatasourceContract {
@@ -55,9 +68,9 @@ class LocalDatasource implements LocalDatasourceContract {
           CREATE TABLE IF NOT EXISTS "users" (
             "user_id" INTEGER PRIMARY KEY AUTOINCREMENT,
             "username" TEXT,
-            "birthdate" TEXT
-          );
-        ''');
+            "kcal_target" TEXT
+        );
+      ''');
 
         // Create child table with foreign key
         await db.execute('''
@@ -66,10 +79,23 @@ class LocalDatasource implements LocalDatasourceContract {
             "user_id" INTEGER NOT NULL,
             "date_start" TEXT NOT NULL,
             "date_end" TEXT,
-            "is_current" INTEGER NOT NULL DEFAULT 0,
-            FOREIGN KEY ("user_id") REFERENCES "users"("user_id") ON UPDATE NO ACTION ON DELETE CASCADE
+            "fasting_total_time" TEXT,
+            "fasting_elapsed_time" TEXT,
+            FOREIGN KEY ("user_id") REFERENCES "users" ("user_id") ON DELETE CASCADE
+        );
+      ''');
+
+        await db.execute('''CREATE TABLE IF NOT EXISTS "kcal_routine" (
+            "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+            "kcal_name" TEXT NOT NULL,
+            "kcal_description" TEXT,
+            "kcal_quantity" INTEGER NOT NULL,
+            "kcal_type" TEXT NOT NULL,
+            "kcal_date" TEXT NOT NULL,
+            "user_id" INTEGER NOT NULL,
+            FOREIGN KEY ("user_id") REFERENCES "users" ("user_id") ON DELETE CASCADE
           );
-        ''');
+      ''');
 
         await db.execute('''CREATE TABLE fasting_routines (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -115,10 +141,9 @@ class LocalDatasource implements LocalDatasourceContract {
 
     await database?.insert('users', {
       'username': localUser.userName,
-      'birthdate': localUser.birthdate.toIso8601String(),
+      'kcal_target': localUser.kcalTarget,
     });
   }
-
 
   @override
   Future<List<Map<String, Object?>>?> getUser({
@@ -154,7 +179,8 @@ class LocalDatasource implements LocalDatasourceContract {
       'user_id': localFasting.userId, // Must correspond to an existing user_id
       'date_start': localFasting.fastingDateStart.toIso8601String(),
       'date_end': localFasting.fastingDateEnd?.toIso8601String(),
-      'is_current': localFasting.isCurrent ? 1 : 0,
+      'fasting_total_time': localFasting.fastingTotalTime?.inMilliseconds,
+      'fasting_elapsed_time': localFasting.fastingElapsedTime?.inMilliseconds,
     });
   }
 
@@ -192,7 +218,6 @@ class LocalDatasource implements LocalDatasourceContract {
         'user_id': localFasting.userId,
         'date_start': localFasting.fastingDateStart.toIso8601String(),
         'date_end': localFasting.fastingDateEnd?.toIso8601String(),
-        'is_current': localFasting.isCurrent ? 1 : 0,
       },
       where: 'id = ?',
       whereArgs: [fastingId],
@@ -214,7 +239,7 @@ class LocalDatasource implements LocalDatasourceContract {
       'users',
       {
         'username': localUser.userName,
-        'birthdate': localUser.birthdate.toIso8601String(),
+        'kcal_target': localUser.kcalTarget,
       },
       where: 'user_id = ?',
       whereArgs: [userId],
@@ -287,10 +312,87 @@ class LocalDatasource implements LocalDatasourceContract {
       );
     }
 
+    final result = await database?.query('fasting_routines');
+
+    return result;
+  }
+
+  @override
+  Future<void> addKcalRoutine({
+    required LocalKcalRoutineModel localKcalRoutine,
+  }) async {
+    if (database == null) {
+      throw Exception(
+        'The database is not initialized. Check the instance on the dependency injection.',
+      );
+    }
+
+    await database?.insert('kcal_routine', {
+      'kcal_name': localKcalRoutine.kcalName,
+      'kcal_description': localKcalRoutine.kcalDescription,
+      'kcal_quantity': localKcalRoutine.kcalQuantity,
+      'kcal_type': localKcalRoutine.kcalType,
+      'kcal_date': localKcalRoutine.kcalDate?.toIso8601String(),
+      'user_id': localKcalRoutine.userId,
+    });
+  }
+
+  @override
+  Future<List<Map<String, Object?>>?> getKcalRoutinePerUserId({
+    required int userId,
+  }) async {
+    if (database == null) {
+      throw Exception(
+        'The database is not initialized. Check the instance on the dependency injection.',
+      );
+    }
+
     final result = await database?.query(
-      'fasting_routines',
+      'kcal_routine',
+      where: 'user_id = ?',
+      whereArgs: [userId],
     );
 
     return result;
+  }
+
+  @override
+  Future<void> updateKcalRoutine({
+    required LocalKcalRoutineModel localKcalRoutine,
+  }) async {
+    if (database == null) {
+      throw Exception(
+        'The database is not initialized. Check the instance on the dependency injection.',
+      );
+    }
+
+    await database?.update(
+      'kcal_routine',
+      {
+        'kcal_name': localKcalRoutine.kcalName,
+        'kcal_description': localKcalRoutine.kcalDescription,
+        'kcal_quantity': localKcalRoutine.kcalQuantity,
+        'kcal_type': localKcalRoutine.kcalType,
+        'kcal_date': localKcalRoutine.kcalDate?.toIso8601String(),
+        'user_id': localKcalRoutine.userId,
+      },
+      where: 'id = ?',
+      whereArgs: [localKcalRoutine.id],
+    );
+  }
+
+  @override
+  Future<void> removeKcalRoutine({required int kcalRoutineId}) async {
+    if (database == null) {
+      throw Exception(
+        'The database is not initialized. Check the instance on the dependency injection.',
+      );
+    }
+
+    await database?.delete(
+      'kcal_routine',
+      where: 'id = ?',
+      whereArgs: [kcalRoutineId],
+    );
   }
 }

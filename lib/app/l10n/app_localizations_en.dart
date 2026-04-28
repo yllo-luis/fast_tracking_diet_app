@@ -68,6 +68,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registerButtonGeneratePasswordTitle => 'Generate Password';
 
   @override
+  String get registerKcalFieldHintText => 'Enter your calorie goal here.';
+
+  @override
   String get registerPasswordStrengthWeak => 'Weak';
 
   @override
@@ -83,7 +86,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noTitle => 'No';
 
   @override
+  String get cancelTitle => 'Cancel';
+
+  @override
+  String get saveTitle => 'Update';
+
+  @override
   String get homeBottomNavigationItemFasting => 'Fasting';
+
+  @override
+  String get homeBottomNavigationItemCalculator => 'Calculator';
 
   @override
   String get homeBottomNavigationItemDiary => 'Diary';
@@ -118,6 +130,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeFastingLayoutTipsTitle => 'Tips';
+
+  @override
+  String get homeFastingLayoutTimeRemainingTitle => 'Time remaining:';
+
+  @override
+  String get homeFastingLayoutTimeElapsedTitle =>
+      'Time elapsed since the start: ';
 
   @override
   String get homeFastingCancelFastingBody =>
@@ -196,4 +215,133 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeFastingRoutineCustomCreateButton => 'Create a routine';
+
+  @override
+  String get homeFastingNotificationStartTitle => 'Fasting Started';
+
+  @override
+  String get homeFastingNotificationStartBody =>
+      'Your fasting timer has started. Let\'s do this!';
+
+  @override
+  String get homeFastingNotificationPausedTitle => 'Fasting Paused';
+
+  @override
+  String get homeFastingNotificationPausedBody =>
+      'Your fast is paused. You can resume it at any time.';
+
+  @override
+  String get homeFastingNotificationCancelledTitle => 'Fasting Cancelled';
+
+  @override
+  String get homeFastingNotificationCancelledBody =>
+      'Fasting cancelled. Don\'t worry, you can start a new cycle whenever you\'re ready.';
+
+  @override
+  String get homeFastingNotificationCompletedTitle => 'Fast complete!';
+
+  @override
+  String get homeFastingNotificationCompletedBody =>
+      'Well done on completing your fast! You\'re one step closer to your goals. Keep it up!';
+
+  @override
+  String get homeFastingDenyChangeOnPageTitle => 'Let\'s focus on fasting!';
+
+  @override
+  String get homeFastingDenyChangeOnPageBody =>
+      'Focus on your fast! Access to the rest of the app will be unlocked upon completion.';
+
+  @override
+  String get homeFastingHistoryNoHistoryText1 =>
+      'The first step toward a new routine begins with your very first fast. Intermittent fasting isn’t just about the time you spend without eating; it’s about giving your body the space it needs to recover, renew its energy, and bring more clarity to your daily life.';
+
+  @override
+  String get homeFastingHistoryNoHistoryText2 =>
+      'Why not give it a try today? Choose a window that fits your lifestyle and experience for yourself how easy it is to get started.';
+
+  @override
+  String get homeFastingHistoryStartFastingButton => 'Start my first fast';
+
+  @override
+  String get homeFastingHistoryGraphTitle => 'Fasting History';
+
+  @override
+  String homeFastingHistoryDataTitle(String fastingTime) {
+    return 'Fasting time: $fastingTime hours';
+  }
+
+  @override
+  String get homeFastingKcalRegistryMessage =>
+      'Your day begins now. Log what you\'ve consumed and take control of your nutrition.';
+
+  @override
+  String get homeFastingKcalRegistryButton => 'Track meals';
+
+  @override
+  String get homeFastingKcalRegistryNoRegistryMessage =>
+      'Logging is the first step toward balance. Let us know what you\'ve had to eat today!';
+
+  @override
+  String get kcalTypeBreakfastLabel => 'Breakfast';
+
+  @override
+  String get kcalTypeLunchLabel => 'Lunch';
+
+  @override
+  String get kcalTypeDinnerLabel => 'Dinner';
+
+  @override
+  String get kcalTypeOtherLabel => 'Other';
+
+  @override
+  String get homeFastingRegistryTip01 =>
+      'Don\'t forget to log cooking oils, dressings, and sauces. They add up quickly.';
+
+  @override
+  String get homeFastingRegistryTip02 =>
+      'If you\'re in a rush, take a picture of your plate to log the details later.';
+
+  @override
+  String get homeFastingRegistryTip03 =>
+      'Don\'t aim for absolute perfection; focus on the consistency of your weekly average.';
+
+  @override
+  String get homeFastingRegistryName => 'Meal name';
+
+  @override
+  String get homeFastingRegistryQuantity => 'Meal calorie count';
+
+  @override
+  String get homeFastingRegistryDate => 'Meal date';
+
+  @override
+  String get homeFastingRegistryType => 'Meal type';
+
+  @override
+  String get homeFastingRegistryButton => 'Log meal';
+
+  @override
+  String get homeProfileTitle => 'Profile';
+
+  @override
+  String get homeProfileUsername => 'Username';
+
+  @override
+  String get homeProfileFastingsDoneSoFar => 'Fasts completed so far';
+
+  @override
+  String get homeProfileKcalMax => 'Calorie goal';
+
+  @override
+  String get homeProfileUpdateKcalMaxTitle => 'Update calorie goal';
+
+  @override
+  String get homeProfileUpdateNewKcalTitle => 'New goal (kcal)';
+
+  @override
+  String get homeFastingNoKcalDefinedWarning =>
+      'Your calorie goal must be set to access this feature.';
+
+  @override
+  String get homeFastingNoKcalDefinedWarningButton => 'Set goal';
 }

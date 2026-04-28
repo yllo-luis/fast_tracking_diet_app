@@ -4,6 +4,7 @@ import 'package:fast_tracking_diet_app/presentation/presentation_utils/presentat
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../../app/l10n/app_localizations.dart';
 import '../../../../utils/enums/home_items.dart';
 import '../../../../utils/enums/home_items_utils.dart';
 
@@ -17,13 +18,12 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final controller = Modular.get<HomeController>();
 
-  final PageController pageController = PageController(initialPage: 0);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
-        controller: pageController,
+        controller: controller.pageController,
+        physics: const NeverScrollableScrollPhysics(),
         onPageChanged: (value) => controller.setCurrentPage = value,
         itemBuilder: (context, index) =>
             GetLayoutPage(homeItems: HomeItems.values[index]),
@@ -34,16 +34,46 @@ class _HomeViewState extends State<HomeView> {
         builder: (context, value, child) {
           return BottomNavigationBar(
             items: HomeItemUtils.getBottomNavigationItems(context: context),
+            selectedItemColor: Colors.deepPurple,
+            unselectedItemColor: Colors.black45,
             currentIndex: value,
             onTap: (value) {
-              pageController.animateToPage(
-                value,
-                duration: PresentationConstants.animationDuration,
-                curve: Curves.easeIn,
-              );
+              if (controller.homeStore.isDoingFasting == false) {
+                controller.pageController.animateToPage(
+                  value,
+                  duration: PresentationConstants.animationDuration,
+                  curve: Curves.easeIn,
+                );
+              } else {
+                showFocusOnFastingSnackbar();
+              }
             },
           );
         },
+      ),
+    );
+  }
+
+  void showFocusOnFastingSnackbar() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Column(
+          crossAxisAlignment: .start,
+          children: [
+            Text(
+              AppLocalizations.of(context)!.homeFastingDenyChangeOnPageTitle,
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: Colors.white),
+            ),
+            Text(
+              AppLocalizations.of(context)!.homeFastingDenyChangeOnPageBody,
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }
